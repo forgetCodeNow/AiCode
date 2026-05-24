@@ -1,0 +1,15 @@
+OpenAIModel:
+  model: "qwen3.6-plus"
+  api_key: "sk-33025c4ffca341b28fbcb6ed9d6ac3d4"
+  base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+
+GLMModel:
+  model_url: ""
+  timeout: 300
+
+
+
+
+common:
+  book: ""
+  file_format: "md"
