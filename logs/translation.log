@@ -1,0 +1,224 @@
+20260525 23:19:13 | MainProcess | MainThread | log_utils.<module>:56 | INFO: This is an info message.
+20260525 23:19:13 | MainProcess | MainThread | log_utils.<module>:57 | WARNING: 这是一个警告
+20260525 23:19:27 | MainProcess | MainThread | log_utils.<module>:56 | INFO: This is an info message.
+20260525 23:19:27 | MainProcess | MainThread | log_utils.<module>:57 | WARNING: 这是一个警告
+20260525 23:19:27 | MainProcess | MainThread | log_utils.test:66 | ERROR: division by zero
+20260525 23:19:27 | MainProcess | MainThread | log_utils.test:67 | ERROR: division by zero
+Traceback (most recent call last):
+
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\utils\log_utils.py", line 68, in <module>
+    test()
+    └ <function test at 0x00000232A27B7F60>
+
+> File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\utils\log_utils.py", line 63, in test
+    print(3/0)
+
+ZeroDivisionError: division by zero
+20260525 23:19:43 | MainProcess | MainThread | log_utils.<module>:56 | INFO: This is an info message.
+20260525 23:19:43 | MainProcess | MainThread | log_utils.<module>:57 | WARNING: 这是一个警告
+20260525 23:19:43 | MainProcess | MainThread | log_utils.test:66 | ERROR: division by zero
+20260525 23:19:43 | MainProcess | MainThread | log_utils.test:67 | ERROR: division by zero
+Traceback (most recent call last):
+
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\utils\log_utils.py", line 68, in <module>
+    test()
+    └ <function test at 0x0000020D41AF7F60>
+
+> File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\utils\log_utils.py", line 63, in test
+    print(3/0)
+
+ZeroDivisionError: division by zero
+20260525 23:33:57 | MainProcess | MainThread | openai_model.request_model:43 | ERROR: Connection error.
+Traceback (most recent call last):
+
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           │    │     │              └ <Request [b'POST']>
+           │    │     └ <function ConnectionPool.handle_request at 0x0000021DDFE262A0>
+           │    └ <HTTPProxy [Requests: 0 active, 0 queued | Connections: 0 active, 0 idle]>
+           └ <httpx.HTTPTransport object at 0x0000021DDFD1FED0>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               │          └ <function TunnelHTTPConnection.handle_request at 0x0000021DDFE276A0>
+               └ <TunnelHTTPConnection [CONNECTION FAILED]>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpcore\_sync\http_proxy.py", line 288, in handle_request
+    connect_response = self._connection.handle_request(
+                       │    │           └ <function HTTPConnection.handle_request at 0x0000021DDFE253A0>
+                       │    └ <HTTPConnection [CONNECTION FAILED]>
+                       └ <TunnelHTTPConnection [CONNECTION FAILED]>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             │    │        └ <Request [b'CONNECT']>
+             │    └ <function HTTPConnection._connect at 0x0000021DDFE25440>
+             └ <HTTPConnection [CONNECTION FAILED]>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             │    │                │             └ {'host': '127.0.0.1', 'port': 7897, 'local_address': None, 'timeout': 5.0, 'socket_options': None}
+             │    │                └ <function SyncBackend.connect_tcp at 0x0000021DDFDC5940>
+             │    └ <httpcore.SyncBackend object at 0x0000021DDFE7C2D0>
+             └ <HTTPConnection [CONNECTION FAILED]>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         │              └ {<class 'TimeoutError'>: <class 'httpcore.ConnectTimeout'>, <class 'OSError'>: <class 'httpcore.ConnectError'>}
+         └ <function map_exceptions at 0x0000021DDFDC40E0>
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    │    │   │     └ ConnectionRefusedError(10061, '由于目标计算机积极拒绝，无法连接。', None, 10061, None)
+    │    │   └ <method 'throw' of 'generator' objects>
+    │    └ <generator object map_exceptions at 0x0000021DE151EF20>
+    └ <contextlib._GeneratorContextManager object at 0x0000021DE1778EC0>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+          └ <class 'httpcore.ConnectError'>
+
+httpcore.ConnectError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\openai\_base_client.py", line 1037, in request
+    response = self._send_request(
+               │    └ <function OpenAI._send_request at 0x0000021DDFAB9EE0>
+               └ <openai.OpenAI object at 0x0000021DDFD474D0>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\openai\_client.py", line 440, in _send_request
+    return self._send_with_auth_retry(request, stream=stream, **kwargs)
+           │    │                     │               │         └ {}
+           │    │                     │               └ False
+           │    │                     └ <Request('POST', 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions')>
+           │    └ <function OpenAI._send_with_auth_retry at 0x0000021DDFAB9E40>
+           └ <openai.OpenAI object at 0x0000021DDFD474D0>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\openai\_client.py", line 418, in _send_with_auth_retry
+    response = super()._send_request(request, stream=stream, **kwargs)
+                                     │               │         └ {}
+                                     │               └ False
+                                     └ <Request('POST', 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions')>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\openai\_base_client.py", line 964, in _send_request
+    return self._client.send(request, stream=stream, **kwargs)
+           │    │       │    │               │         └ {}
+           │    │       │    │               └ False
+           │    │       │    └ <Request('POST', 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions')>
+           │    │       └ <function Client.send at 0x0000021DDE8B9DA0>
+           │    └ <openai._base_client.SyncHttpxClientWrapper object at 0x0000021DDFD47230>
+           └ <openai.OpenAI object at 0x0000021DDFD474D0>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               │    └ <function Client._send_handling_auth at 0x0000021DDE8B9E40>
+               └ <openai._base_client.SyncHttpxClientWrapper object at 0x0000021DDFD47230>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               │    └ <function Client._send_handling_redirects at 0x0000021DDE8B9EE0>
+               └ <openai._base_client.SyncHttpxClientWrapper object at 0x0000021DDFD47230>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               │    │                    └ <Request('POST', 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions')>
+               │    └ <function Client._send_single_request at 0x0000021DDE8B9F80>
+               └ <openai._base_client.SyncHttpxClientWrapper object at 0x0000021DDFD47230>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               │         │              └ <Request('POST', 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions')>
+               │         └ <function HTTPTransport.handle_request at 0x0000021DDE8A71A0>
+               └ <httpx.HTTPTransport object at 0x0000021DDFD1FED0>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         └ <function map_httpcore_exceptions at 0x0000021DDE8A6CA0>
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    │    │   │     └ ConnectError(ConnectionRefusedError(10061, '由于目标计算机积极拒绝，无法连接。', None, 10061, None))
+    │    │   └ <method 'throw' of 'generator' objects>
+    │    └ <generator object map_httpcore_exceptions at 0x0000021DE1789140>
+    └ <contextlib._GeneratorContextManager object at 0x0000021DE1778E50>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+          │          └ '[WinError 10061] 由于目标计算机积极拒绝，无法连接。'
+          └ <class 'httpx.ConnectError'>
+
+httpx.ConnectError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\main.py", line 34, in <module>
+    result = client.request_model('who are you?')
+             │      └ <function OpenAiModel.request_model at 0x0000021DDFC1A020>
+             └ <ai_model.openai_model.OpenAiModel object at 0x0000021DDFD46CF0>
+
+> File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\ai_model\openai_model.py", line 27, in request_model
+    resp = self.client.chat.completions.create(
+           │    │      │    │           └ <function Completions.create at 0x0000021DDFFAD120>
+           │    │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x0000021DE16823C0>
+           │    │      └ <openai.resources.chat.chat.Chat object at 0x0000021DE1682270>
+           │    └ <openai.OpenAI object at 0x0000021DDFD474D0>
+           └ <ai_model.openai_model.OpenAiModel object at 0x0000021DDFD46CF0>
+
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'qwen3.6-plus', 'messages': ({'role': 'user', 'content': 'who are you?'},)}
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x0000021DE16823C0>,)
+           └ <function Completions.create at 0x0000021DDFFACFE0>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1215, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x0000021DDFD474D0>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x0000021DE16823C0>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ False
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000021DDFAAE2A0>
+           │    │          └ <openai.OpenAI object at 0x0000021DDFD474D0>
+           │    └ ~ResponseT
+           └ <function cast at 0x0000021DDC2AC2C0>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\openai\_base_client.py", line 1072, in request
+    raise APIConnectionError(request=request) from err
+          │                          └ <Request('POST', 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions')>
+          └ <class 'openai.APIConnectionError'>
+
+openai.APIConnectionError: Connection error.
+20260525 23:35:38 | MainProcess | MainThread | openai_model.request_model:43 | ERROR: Connection error.
+20260525 23:40:13 | MainProcess | MainThread | openai_model.request_model:33 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 21:46:24 | MainProcess | MainThread | openai_model.request_model:33 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 21:49:00 | MainProcess | MainThread | openai_model.request_model:33 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 21:55:20 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 21:56:40 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:03:15 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:04:10 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:08:57 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:09:50 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:14:12 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:15:00 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:20:23 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:21:04 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:21:04 | MainProcess | MainThread | file_writer.write_to_pdf:93 | INFO: pdf写入完成
+20260528 22:23:05 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:23:54 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:25:26 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:26:13 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:26:13 | MainProcess | MainThread | file_writer.write_to_pdf:93 | INFO: pdf写入完成
+20260528 22:29:17 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:29:59 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:29:59 | MainProcess | MainThread | file_writer.write_to_pdf:93 | INFO: pdf写入完成
+20260528 22:37:27 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:38:37 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:40:14 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:41:39 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:43:14 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:44:12 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:45:25 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:47:30 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:49:03 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:53:25 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:55:28 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:55:28 | MainProcess | MainThread | file_writer.write_to_pdf:93 | INFO: pdf写入完成
