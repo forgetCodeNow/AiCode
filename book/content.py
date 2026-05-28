@@ -62,9 +62,9 @@ class TablesContent:
         '''
 
         if self.content_type == ContentType.TABLE and isinstance(translation, str) and status:
-            table_data = [row.strip().split() for row in translation.strip().split('\n')]
+            table_data = [row.strip().split(',') for row in translation.strip().split('\n')]
             # 得到DataFrame数据，表头单独处理
-            translation_df = pd.DataFrame(table_data[1:], columns=table_data[0])
+            translation_df = pd.DataFrame(table_data, columns=table_data[0])
             log.debug('制表后的表格数据：{}'.format(translation_df))
             self.translation = translation_df
             self.status = status

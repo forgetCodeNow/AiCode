@@ -4,6 +4,7 @@ import openai
 from openai import OpenAI
 from ai_model.model import Model
 from utils.log_utils import log
+from book.content import ContentType
 
 
 class OpenAiModel(Model):
@@ -44,6 +45,12 @@ class OpenAiModel(Model):
                 log.error(e)
                 return '', False
         return '', False
+
+    # def make_prompt(self, content, target_language):
+    #     if content.content_type == ContentType.TEXT and isinstance(content.original, str):
+    #         return f'请翻译成{target_language}: {content.original}'
+    #     if content.content_type == ContentType.TABLE:
+    #         return f'请翻译成{target_language}，每个元素之间用逗号隔开，以非MarkDown的表格形式返回：\n {content.get_original_to_string()}'
 
 
 

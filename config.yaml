@@ -11,5 +11,6 @@ GLMModel:
 
 
 common:
-  book: ""
-  file_format: "md"
+  book: "./test/test.pdf"
+  file_format: "pdf"
+  out_file_path: "./test/test_translated.pdf"

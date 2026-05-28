@@ -57,7 +57,7 @@ class FileWriter:
             for content in page.contents:
                 if content.status:
                     # 分文本和表格
-                    if content.conytent_type == ContentType.TEXT:
+                    if content.content_type == ContentType.TEXT:
                         # 写一个段落
                         paragraph = Paragraph(text=content.translation, style=style)
                         pdf_data.append(paragraph)

@@ -55,7 +55,7 @@ def pdf_parser(pdf_file_path: str, pages: Optional[int] = None) -> Book:
 
             # 处理表格数据
             if tables:
-                tables_content = TablesContent(content_type=ContentType.TABLES, original=tables)
+                tables_content = TablesContent(content_type=ContentType.TABLE, original=tables)
                 page.add_content(tables_content)
                 log.debug(f'[pdf解析之后的表格内容]: \n{tables}')
 

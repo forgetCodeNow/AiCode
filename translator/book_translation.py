@@ -32,6 +32,9 @@ class PDFTranslator:
 
         self.book = pdf_parser(pdf_file_path, pages)
 
+        # 把真实数据传入FileWriter类
+        self.writer.book = self.book
+
         for page_index, page in enumerate(self.book.pages):
             for content_index, content in enumerate(page.contents):
                 # 开始翻译每一个content
@@ -42,7 +45,7 @@ class PDFTranslator:
                 # 2、调用大语言模型,得到翻译后的文本和状态
                 translation_text, status = self.model.request_model(prompt)
 
-                log.debug(f'大语言模型翻译后的文本：{translation_text}')
+                log.debug(f'大语言模型翻译后的内容：\n{translation_text}')
                 # 把翻译后的文本存放到content里面
                 self.book.pages[page_index].contents[content_index].set_translation(translation_text, status)
 

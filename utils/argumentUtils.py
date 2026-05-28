@@ -25,7 +25,9 @@ class ArgumentUtils:
             default='config.yaml',
             help='项目的整体配置文件'
         )
-        self.parser.add_argument('--model_type', type=str, required=True, default='OpenAiModel',
+        # self.parser.add_argument('--model_type', type=str, required=True, default='OpenAiModel',      # required=True 表述命令行执行程序必须写--model_type
+        #                          choices=['OpenAiModel', 'GLMModel'], help='选择大模型')
+        self.parser.add_argument('--model_type', type=str, default='OpenAiModel',
                                  choices=['OpenAiModel', 'GLMModel'], help='选择大模型')
         self.parser.add_argument('--glm_model_url', type=str, default='', help='glm大模型访问路径')
         self.parser.add_argument('--timeout', type=str, default='', help='API接口请求的超时时间')
