@@ -1,0 +1,56 @@
+# Jupyter Notebook checkpoints (不要提交checkpoint文件)
+.ipynb_checkpoints/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Model files (模型文件太大,不提交)
+*.pth
+*.pt
+*.onnx
+*.h5
+*.pkl
+models/
+
+# Dataset directories (数据集太大,不提交)
+dataset/
+MNIST/
+data/
+datasets/
+
+# Large data files
+*.csv
+*.xlsx
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Logs and outputs
+logs/
+outputs/
+runs/
+temp.json
+
+# Generated files
+notebook_content.txt
