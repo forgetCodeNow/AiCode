@@ -1,0 +1,13 @@
+openai
+pdfplumber
+simplejson
+requests
+PyYAML
+pillow
+reportlab
+pandas
+loguru
+langchain
+langchain-openai
+gradio
+fastapi
