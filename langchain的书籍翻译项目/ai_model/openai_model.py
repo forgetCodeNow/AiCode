@@ -1,3 +1,4 @@
+import os
 import time
 
 import openai
@@ -15,7 +16,6 @@ class OpenAiModel(Model):
         self.model = model
         self.api_key = api_key
         self.base_url = base_url
-
 
     def create_llm(self):
         """

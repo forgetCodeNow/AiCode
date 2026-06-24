@@ -40,7 +40,7 @@ class PDFTranslator:
         for page_index, page in enumerate(self.book.pages):
             for content_index, content in enumerate(page.contents):
                 # 开始翻译每一个content
-                translation_text, status = self.langchain.run(content, source_language, target_language, out_file_format, out_file_path)
+                translation_text, status = self.langchain.run(content, source_language, target_language)
 
                 log.debug(f'大语言模型翻译后的内容：\n{translation_text}')
                 # 把翻译后的文本存放到content里面

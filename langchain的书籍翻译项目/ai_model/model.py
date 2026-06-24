@@ -8,12 +8,10 @@ class Model:
     def create_llm(self):
         print('初始化大语言模型的对象')
 
-
-    def make_prompt(self, content: Content = None, source_language = None, target_language = None):
+    @staticmethod
+    def make_prompt():
         """
         创建提示模版
-        :param content:
-        :param target_language:
         :return:
         """
         system_template = """

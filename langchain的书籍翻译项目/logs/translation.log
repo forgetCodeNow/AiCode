@@ -1,0 +1,1308 @@
+20260525 23:19:13 | MainProcess | MainThread | log_utils.<module>:56 | INFO: This is an info message.
+20260525 23:19:13 | MainProcess | MainThread | log_utils.<module>:57 | WARNING: 这是一个警告
+20260525 23:19:27 | MainProcess | MainThread | log_utils.<module>:56 | INFO: This is an info message.
+20260525 23:19:27 | MainProcess | MainThread | log_utils.<module>:57 | WARNING: 这是一个警告
+20260525 23:19:27 | MainProcess | MainThread | log_utils.test:66 | ERROR: division by zero
+20260525 23:19:27 | MainProcess | MainThread | log_utils.test:67 | ERROR: division by zero
+Traceback (most recent call last):
+
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\utils\log_utils.py", line 68, in <module>
+    test()
+    └ <function test at 0x00000232A27B7F60>
+
+> File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\utils\log_utils.py", line 63, in test
+    print(3/0)
+
+ZeroDivisionError: division by zero
+20260525 23:19:43 | MainProcess | MainThread | log_utils.<module>:56 | INFO: This is an info message.
+20260525 23:19:43 | MainProcess | MainThread | log_utils.<module>:57 | WARNING: 这是一个警告
+20260525 23:19:43 | MainProcess | MainThread | log_utils.test:66 | ERROR: division by zero
+20260525 23:19:43 | MainProcess | MainThread | log_utils.test:67 | ERROR: division by zero
+Traceback (most recent call last):
+
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\utils\log_utils.py", line 68, in <module>
+    test()
+    └ <function test at 0x0000020D41AF7F60>
+
+> File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\utils\log_utils.py", line 63, in test
+    print(3/0)
+
+ZeroDivisionError: division by zero
+20260525 23:33:57 | MainProcess | MainThread | openai_model.request_model:43 | ERROR: Connection error.
+Traceback (most recent call last):
+
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           │    │     │              └ <Request [b'POST']>
+           │    │     └ <function ConnectionPool.handle_request at 0x0000021DDFE262A0>
+           │    └ <HTTPProxy [Requests: 0 active, 0 queued | Connections: 0 active, 0 idle]>
+           └ <httpx.HTTPTransport object at 0x0000021DDFD1FED0>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               │          └ <function TunnelHTTPConnection.handle_request at 0x0000021DDFE276A0>
+               └ <TunnelHTTPConnection [CONNECTION FAILED]>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpcore\_sync\http_proxy.py", line 288, in handle_request
+    connect_response = self._connection.handle_request(
+                       │    │           └ <function HTTPConnection.handle_request at 0x0000021DDFE253A0>
+                       │    └ <HTTPConnection [CONNECTION FAILED]>
+                       └ <TunnelHTTPConnection [CONNECTION FAILED]>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             │    │        └ <Request [b'CONNECT']>
+             │    └ <function HTTPConnection._connect at 0x0000021DDFE25440>
+             └ <HTTPConnection [CONNECTION FAILED]>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             │    │                │             └ {'host': '127.0.0.1', 'port': 7897, 'local_address': None, 'timeout': 5.0, 'socket_options': None}
+             │    │                └ <function SyncBackend.connect_tcp at 0x0000021DDFDC5940>
+             │    └ <httpcore.SyncBackend object at 0x0000021DDFE7C2D0>
+             └ <HTTPConnection [CONNECTION FAILED]>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         │              └ {<class 'TimeoutError'>: <class 'httpcore.ConnectTimeout'>, <class 'OSError'>: <class 'httpcore.ConnectError'>}
+         └ <function map_exceptions at 0x0000021DDFDC40E0>
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    │    │   │     └ ConnectionRefusedError(10061, '由于目标计算机积极拒绝，无法连接。', None, 10061, None)
+    │    │   └ <method 'throw' of 'generator' objects>
+    │    └ <generator object map_exceptions at 0x0000021DE151EF20>
+    └ <contextlib._GeneratorContextManager object at 0x0000021DE1778EC0>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+          └ <class 'httpcore.ConnectError'>
+
+httpcore.ConnectError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\openai\_base_client.py", line 1037, in request
+    response = self._send_request(
+               │    └ <function OpenAI._send_request at 0x0000021DDFAB9EE0>
+               └ <openai.OpenAI object at 0x0000021DDFD474D0>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\openai\_client.py", line 440, in _send_request
+    return self._send_with_auth_retry(request, stream=stream, **kwargs)
+           │    │                     │               │         └ {}
+           │    │                     │               └ False
+           │    │                     └ <Request('POST', 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions')>
+           │    └ <function OpenAI._send_with_auth_retry at 0x0000021DDFAB9E40>
+           └ <openai.OpenAI object at 0x0000021DDFD474D0>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\openai\_client.py", line 418, in _send_with_auth_retry
+    response = super()._send_request(request, stream=stream, **kwargs)
+                                     │               │         └ {}
+                                     │               └ False
+                                     └ <Request('POST', 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions')>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\openai\_base_client.py", line 964, in _send_request
+    return self._client.send(request, stream=stream, **kwargs)
+           │    │       │    │               │         └ {}
+           │    │       │    │               └ False
+           │    │       │    └ <Request('POST', 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions')>
+           │    │       └ <function Client.send at 0x0000021DDE8B9DA0>
+           │    └ <openai._base_client.SyncHttpxClientWrapper object at 0x0000021DDFD47230>
+           └ <openai.OpenAI object at 0x0000021DDFD474D0>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               │    └ <function Client._send_handling_auth at 0x0000021DDE8B9E40>
+               └ <openai._base_client.SyncHttpxClientWrapper object at 0x0000021DDFD47230>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               │    └ <function Client._send_handling_redirects at 0x0000021DDE8B9EE0>
+               └ <openai._base_client.SyncHttpxClientWrapper object at 0x0000021DDFD47230>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               │    │                    └ <Request('POST', 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions')>
+               │    └ <function Client._send_single_request at 0x0000021DDE8B9F80>
+               └ <openai._base_client.SyncHttpxClientWrapper object at 0x0000021DDFD47230>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               │         │              └ <Request('POST', 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions')>
+               │         └ <function HTTPTransport.handle_request at 0x0000021DDE8A71A0>
+               └ <httpx.HTTPTransport object at 0x0000021DDFD1FED0>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         └ <function map_httpcore_exceptions at 0x0000021DDE8A6CA0>
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    │    │   │     └ ConnectError(ConnectionRefusedError(10061, '由于目标计算机积极拒绝，无法连接。', None, 10061, None))
+    │    │   └ <method 'throw' of 'generator' objects>
+    │    └ <generator object map_httpcore_exceptions at 0x0000021DE1789140>
+    └ <contextlib._GeneratorContextManager object at 0x0000021DE1778E50>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+          │          └ '[WinError 10061] 由于目标计算机积极拒绝，无法连接。'
+          └ <class 'httpx.ConnectError'>
+
+httpx.ConnectError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\main.py", line 34, in <module>
+    result = client.request_model('who are you?')
+             │      └ <function OpenAiModel.request_model at 0x0000021DDFC1A020>
+             └ <ai_model.openai_model.OpenAiModel object at 0x0000021DDFD46CF0>
+
+> File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\ai_model\openai_model.py", line 27, in request_model
+    resp = self.client.chat.completions.create(
+           │    │      │    │           └ <function Completions.create at 0x0000021DDFFAD120>
+           │    │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x0000021DE16823C0>
+           │    │      └ <openai.resources.chat.chat.Chat object at 0x0000021DE1682270>
+           │    └ <openai.OpenAI object at 0x0000021DDFD474D0>
+           └ <ai_model.openai_model.OpenAiModel object at 0x0000021DDFD46CF0>
+
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'qwen3.6-plus', 'messages': ({'role': 'user', 'content': 'who are you?'},)}
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x0000021DE16823C0>,)
+           └ <function Completions.create at 0x0000021DDFFACFE0>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1215, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x0000021DDFD474D0>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x0000021DE16823C0>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ False
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000021DDFAAE2A0>
+           │    │          └ <openai.OpenAI object at 0x0000021DDFD474D0>
+           │    └ ~ResponseT
+           └ <function cast at 0x0000021DDC2AC2C0>
+  File "C:\Users\Administrator\Desktop\PythonCode\PythonProject\.venv\Lib\site-packages\openai\_base_client.py", line 1072, in request
+    raise APIConnectionError(request=request) from err
+          │                          └ <Request('POST', 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions')>
+          └ <class 'openai.APIConnectionError'>
+
+openai.APIConnectionError: Connection error.
+20260525 23:35:38 | MainProcess | MainThread | openai_model.request_model:43 | ERROR: Connection error.
+20260525 23:40:13 | MainProcess | MainThread | openai_model.request_model:33 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 21:46:24 | MainProcess | MainThread | openai_model.request_model:33 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 21:49:00 | MainProcess | MainThread | openai_model.request_model:33 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 21:55:20 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 21:56:40 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:03:15 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:04:10 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:08:57 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:09:50 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:14:12 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:15:00 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:20:23 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:21:04 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:21:04 | MainProcess | MainThread | file_writer.write_to_pdf:93 | INFO: pdf写入完成
+20260528 22:23:05 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:23:54 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:25:26 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:26:13 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:26:13 | MainProcess | MainThread | file_writer.write_to_pdf:93 | INFO: pdf写入完成
+20260528 22:29:17 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:29:59 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:29:59 | MainProcess | MainThread | file_writer.write_to_pdf:93 | INFO: pdf写入完成
+20260528 22:37:27 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:38:37 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:40:14 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:41:39 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:43:14 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:44:12 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:45:25 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:47:30 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:49:03 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:53:25 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:55:28 | MainProcess | MainThread | openai_model.request_model:34 | INFO: 模型调用成功！当前使用模型：qwen3.6-plus
+20260528 22:55:28 | MainProcess | MainThread | file_writer.write_to_pdf:93 | INFO: pdf写入完成
+20260624 21:34:50 | MainProcess | MainThread | translator_chain.run:45 | ERROR: Error code: 401 - {'error': {'message': 'Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code#apikey-error', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}, 'request_id': 'a0c093f4-3345-9188-aa7d-bd63d436851a'}
+Traceback (most recent call last):
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\main.py", line 20, in <module>
+    translator.book_translation(pdf_file_path=config.input_file, source_language=config.source_language, target_language=config.target_language, out_file_format=config.output_format)
+    │          │                              │                                  │                                       │                                       └ <utils.project_config.ProjectConfig object at 0x000001A3FEB17CB0>
+    │          │                              │                                  │                                       └ <utils.project_config.ProjectConfig object at 0x000001A3FEB17CB0>
+    │          │                              │                                  └ <utils.project_config.ProjectConfig object at 0x000001A3FEB17CB0>
+    │          │                              └ <utils.project_config.ProjectConfig object at 0x000001A3FEB17CB0>
+    │          └ <function PDFTranslator.book_translation at 0x000001A3FEAE7BA0>
+    └ <translator.book_translation.PDFTranslator object at 0x000001A3FED3C050>
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\translator\book_translation.py", line 43, in book_translation
+    translation_text, status = self.langchain.run(content, source_language, target_language)
+    │                          │    │         │   │        │                └ 'Chinese'
+    │                          │    │         │   │        └ 'English'
+    │                          │    │         │   └ <book.content.TablesContent object at 0x000001A3FF54BA10>
+    │                          │    │         └ <function TranslatorChain.run at 0x000001A3FEAE79C0>
+    │                          │    └ <translator.translator_chain.TranslatorChain object at 0x000001A3FED3C2F0>
+    │                          └ <translator.book_translation.PDFTranslator object at 0x000001A3FED3C050>
+    └ ''
+
+> File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\translator\translator_chain.py", line 37, in run
+    result = self.langchain.invoke({
+             │    │         └ <function RunnableSequence.invoke at 0x000001A3D4AF2D40>
+             │    └ ChatPromptTemplate(input_variables=['source_language', 'target_language', 'text'], input_types={}, partial_variables={}, mess...
+             └ <translator.translator_chain.TranslatorChain object at 0x000001A3FED3C2F0>
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 3444, in invoke
+    input_ = context.run(step.invoke, input_, config)
+             │       │   │    │       │       └ {'tags': [], 'metadata': {}, 'callbacks': <langchain_core.callbacks.manager.CallbackManager object at 0x000001A3FF6763F0>, 'r...
+             │       │   │    │       └ ChatPromptValue(messages=[SystemMessage(content='\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语言，翻译后输出的是：Chinese语言\n    ...
+             │       │   │    └ <function BaseChatModel.invoke at 0x000001A3FC8437E0>
+             │       │   └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+             │       └ <method 'run' of '_contextvars.Context' objects>
+             └ <_contextvars.Context object at 0x000001A3FF7FEF80>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 476, in invoke
+    self.generate_prompt(
+    │    └ <function BaseChatModel.generate_prompt at 0x000001A3FC870C20>
+    └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1849, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           │    │        │                     │               │            └ {'tags': [], 'metadata': {}, 'run_name': None, 'run_id': None}
+           │    │        │                     │               └ <langchain_core.callbacks.manager.CallbackManager object at 0x000001A3FF7C5980>
+           │    │        │                     └ None
+           │    │        └ [[SystemMessage(content='\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语言，翻译后输出的是：Chinese语言\n        ', additional_kwargs...
+           │    └ <function BaseChatModel.generate at 0x000001A3FC870AE0>
+           └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1656, in generate
+    self._generate_with_cache(
+    │    └ <function BaseChatModel._generate_with_cache at 0x000001A3FC870D60>
+    └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1994, in _generate_with_cache
+    result = self._generate(
+             │    └ <function BaseChatOpenAI._generate at 0x000001A3FC8F8E00>
+             └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1692, in _generate
+    _handle_openai_api_error(e)
+    └ <function _handle_openai_api_error at 0x000001A3FC8F8040>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1687, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+                   │    │      │                 │        └ {'model': 'deepseek-v4-flash', 'stream': False, 'messages': [{'content': '\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语...
+                   │    │      │                 └ <function Completions.create at 0x000001A3FF8005E0>
+                   │    │      └ <openai.resources.chat.completions.completions.CompletionsWithRawResponse object at 0x000001A3FF642270>
+                   │    └ <openai.resources.chat.completions.completions.Completions object at 0x000001A3FF549D30>
+                   └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\openai\_legacy_response.py", line 367, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+           │    │                 │   │     │       └ {'model': 'deepseek-v4-flash', 'stream': False, 'messages': [{'content': '\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语...
+           │    │                 │   │     └ ()
+           │    │                 │   └ <bound method Completions.create of <openai.resources.chat.completions.completions.Completions object at 0x000001A3FF549D30>>
+           │    │                 └ ~R
+           │    └ <class 'openai._legacy_response.LegacyAPIResponse'>
+           └ <function cast at 0x000001A3CF17EC00>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'deepseek-v4-flash', 'stream': False, 'messages': [{'content': '\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x000001A3FF549D30>,)
+           └ <function Completions.create at 0x000001A3FEE5B9C0>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1251, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000001A3FED3D7F0>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x000001A3FF549D30>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ False
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers={'X-Stainless-Raw-Response': 'true'}, max_retr...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x000001A3D2D867A0>
+           │    │          └ <openai.OpenAI object at 0x000001A3FED3D7F0>
+           │    └ ~ResponseT
+           └ <function cast at 0x000001A3CF17EC00>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x000001A3D2D84CC0>
+          └ <openai.OpenAI object at 0x000001A3FED3D7F0>
+
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code#apikey-error', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}, 'request_id': 'a0c093f4-3345-9188-aa7d-bd63d436851a'}
+20260624 21:34:50 | MainProcess | MainThread | file_writer.write_to_pdf:93 | INFO: pdf写入完成
+20260624 21:36:54 | MainProcess | MainThread | translator_chain.run:45 | ERROR: Connection error.
+Traceback (most recent call last):
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           │    │     │              └ <Request [b'POST']>
+           │    │     └ <function ConnectionPool.handle_request at 0x000002033A0DD1C0>
+           │    └ <ConnectionPool [Requests: 0 active, 0 queued | Connections: 0 active, 0 idle]>
+           └ <httpx.HTTPTransport object at 0x0000020345811160>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               │          └ <function HTTPConnection.handle_request at 0x000002033A0DC2C0>
+               └ <HTTPConnection [CONNECTION FAILED]>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             │    │        └ <Request [b'POST']>
+             │    └ <function HTTPConnection._connect at 0x000002033A0DC360>
+             └ <HTTPConnection [CONNECTION FAILED]>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             │    │                │             └ {'host': 'deepseek', 'port': 443, 'local_address': None, 'timeout': None, 'socket_options': [(65535, 8, 1)]}
+             │    │                └ <function SyncBackend.connect_tcp at 0x000002033A088720>
+             │    └ <httpcore.SyncBackend object at 0x0000020345810D70>
+             └ <HTTPConnection [CONNECTION FAILED]>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         │              └ {<class 'TimeoutError'>: <class 'httpcore.ConnectTimeout'>, <class 'OSError'>: <class 'httpcore.ConnectError'>}
+         └ <function map_exceptions at 0x000002033A06EF20>
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    │    │   │     └ gaierror(11001, 'getaddrinfo failed')
+    │    │   └ <method 'throw' of 'generator' objects>
+    │    └ <generator object map_exceptions at 0x00000203461472E0>
+    └ <contextlib._GeneratorContextManager object at 0x000002034728A5F0>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+          └ <class 'httpcore.ConnectError'>
+
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\openai\_base_client.py", line 1037, in request
+    response = self._send_request(
+               │    └ <function OpenAI._send_request at 0x000002031982E3E0>
+               └ <openai.OpenAI object at 0x00000203458116A0>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\openai\_client.py", line 440, in _send_request
+    return self._send_with_auth_retry(request, stream=stream, **kwargs)
+           │    │                     │               │         └ {}
+           │    │                     │               └ False
+           │    │                     └ <Request('POST', 'https://deepseek/com/v1/chat/completions')>
+           │    └ <function OpenAI._send_with_auth_retry at 0x000002031982E340>
+           └ <openai.OpenAI object at 0x00000203458116A0>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\openai\_client.py", line 418, in _send_with_auth_retry
+    response = super()._send_request(request, stream=stream, **kwargs)
+                                     │               │         └ {}
+                                     │               └ False
+                                     └ <Request('POST', 'https://deepseek/com/v1/chat/completions')>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\openai\_base_client.py", line 964, in _send_request
+    return self._client.send(request, stream=stream, **kwargs)
+           │    │       │    │               │         └ {}
+           │    │       │    │               └ False
+           │    │       │    └ <Request('POST', 'https://deepseek/com/v1/chat/completions')>
+           │    │       └ <function Client.send at 0x0000020318299DA0>
+           │    └ <langchain_openai.chat_models._client_utils._SyncHttpxClientWrapper object at 0x0000020345810C20>
+           └ <openai.OpenAI object at 0x00000203458116A0>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               │    └ <function Client._send_handling_auth at 0x0000020318299E40>
+               └ <langchain_openai.chat_models._client_utils._SyncHttpxClientWrapper object at 0x0000020345810C20>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               │    └ <function Client._send_handling_redirects at 0x0000020318299EE0>
+               └ <langchain_openai.chat_models._client_utils._SyncHttpxClientWrapper object at 0x0000020345810C20>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               │    │                    └ <Request('POST', 'https://deepseek/com/v1/chat/completions')>
+               │    └ <function Client._send_single_request at 0x0000020318299F80>
+               └ <langchain_openai.chat_models._client_utils._SyncHttpxClientWrapper object at 0x0000020345810C20>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               │         │              └ <Request('POST', 'https://deepseek/com/v1/chat/completions')>
+               │         └ <function HTTPTransport.handle_request at 0x000002031827F420>
+               └ <httpx.HTTPTransport object at 0x0000020345811160>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         └ <function map_httpcore_exceptions at 0x000002031827EF20>
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    │    │   │     └ ConnectError(gaierror(11001, 'getaddrinfo failed'))
+    │    │   └ <method 'throw' of 'generator' objects>
+    │    └ <generator object map_httpcore_exceptions at 0x000002034604B540>
+    └ <contextlib._GeneratorContextManager object at 0x000002034728A580>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+          │          └ '[Errno 11001] getaddrinfo failed'
+          └ <class 'httpx.ConnectError'>
+
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\main.py", line 20, in <module>
+    translator.book_translation(pdf_file_path=config.input_file, source_language=config.source_language, target_language=config.target_language, out_file_format=config.output_format)
+    │          │                              │                                  │                                       │                                       └ <utils.project_config.ProjectConfig object at 0x00000203455E6900>
+    │          │                              │                                  │                                       └ <utils.project_config.ProjectConfig object at 0x00000203455E6900>
+    │          │                              │                                  └ <utils.project_config.ProjectConfig object at 0x00000203455E6900>
+    │          │                              └ <utils.project_config.ProjectConfig object at 0x00000203455E6900>
+    │          └ <function PDFTranslator.book_translation at 0x00000203455B7B00>
+    └ <translator.book_translation.PDFTranslator object at 0x00000203455E7E00>
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\translator\book_translation.py", line 43, in book_translation
+    translation_text, status = self.langchain.run(content, source_language, target_language)
+    │                          │    │         │   │        │                └ 'Chinese'
+    │                          │    │         │   │        └ 'English'
+    │                          │    │         │   └ <book.content.TablesContent object at 0x000002034602B8C0>
+    │                          │    │         └ <function TranslatorChain.run at 0x00000203455B7920>
+    │                          │    └ <translator.translator_chain.TranslatorChain object at 0x00000203458101A0>
+    │                          └ <translator.book_translation.PDFTranslator object at 0x00000203455E7E00>
+    └ ''
+
+> File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\translator\translator_chain.py", line 37, in run
+    result = self.langchain.invoke({
+             │    │         └ <function RunnableSequence.invoke at 0x000002031B582D40>
+             │    └ ChatPromptTemplate(input_variables=['source_language', 'target_language', 'text'], input_types={}, partial_variables={}, mess...
+             └ <translator.translator_chain.TranslatorChain object at 0x00000203458101A0>
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 3444, in invoke
+    input_ = context.run(step.invoke, input_, config)
+             │       │   │    │       │       └ {'tags': [], 'metadata': {}, 'callbacks': <langchain_core.callbacks.manager.CallbackManager object at 0x00000203461463F0>, 'r...
+             │       │   │    │       └ ChatPromptValue(messages=[SystemMessage(content='\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语言，翻译后输出的是：Chinese语言\n    ...
+             │       │   │    └ <function BaseChatModel.invoke at 0x00000203433177E0>
+             │       │   └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+             │       └ <method 'run' of '_contextvars.Context' objects>
+             └ <_contextvars.Context object at 0x000002034729EE80>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 476, in invoke
+    self.generate_prompt(
+    │    └ <function BaseChatModel.generate_prompt at 0x0000020343344C20>
+    └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1849, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           │    │        │                     │               │            └ {'tags': [], 'metadata': {}, 'run_name': None, 'run_id': None}
+           │    │        │                     │               └ <langchain_core.callbacks.manager.CallbackManager object at 0x0000020347261980>
+           │    │        │                     └ None
+           │    │        └ [[SystemMessage(content='\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语言，翻译后输出的是：Chinese语言\n        ', additional_kwargs...
+           │    └ <function BaseChatModel.generate at 0x0000020343344AE0>
+           └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1656, in generate
+    self._generate_with_cache(
+    │    └ <function BaseChatModel._generate_with_cache at 0x0000020343344D60>
+    └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1994, in _generate_with_cache
+    result = self._generate(
+             │    └ <function BaseChatOpenAI._generate at 0x00000203433CCE00>
+             └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1692, in _generate
+    _handle_openai_api_error(e)
+    └ <function _handle_openai_api_error at 0x00000203433CC040>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1687, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+                   │    │      │                 │        └ {'model': 'deepseek-v4-flash', 'stream': False, 'messages': [{'content': '\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语...
+                   │    │      │                 └ <function Completions.create at 0x00000203472A05E0>
+                   │    │      └ <openai.resources.chat.completions.completions.CompletionsWithRawResponse object at 0x0000020346112120>
+                   │    └ <openai.resources.chat.completions.completions.Completions object at 0x0000020346029BE0>
+                   └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\openai\_legacy_response.py", line 367, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+           │    │                 │   │     │       └ {'model': 'deepseek-v4-flash', 'stream': False, 'messages': [{'content': '\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语...
+           │    │                 │   │     └ ()
+           │    │                 │   └ <bound method Completions.create of <openai.resources.chat.completions.completions.Completions object at 0x0000020346029BE0>>
+           │    │                 └ ~R
+           │    └ <class 'openai._legacy_response.LegacyAPIResponse'>
+           └ <function cast at 0x0000020315BEEC00>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'deepseek-v4-flash', 'stream': False, 'messages': [{'content': '\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x0000020346029BE0>,)
+           └ <function Completions.create at 0x000002034592B9C0>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1251, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x00000203458116A0>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x0000020346029BE0>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ False
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers={'X-Stainless-Raw-Response': 'true'}, max_retr...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x00000203198267A0>
+           │    │          └ <openai.OpenAI object at 0x00000203458116A0>
+           │    └ ~ResponseT
+           └ <function cast at 0x0000020315BEEC00>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\openai\_base_client.py", line 1072, in request
+    raise APIConnectionError(request=request) from err
+          │                          └ <Request('POST', 'https://deepseek/com/v1/chat/completions')>
+          └ <class 'openai.APIConnectionError'>
+
+openai.APIConnectionError: Connection error.
+20260624 21:36:55 | MainProcess | MainThread | file_writer.write_to_pdf:93 | INFO: pdf写入完成
+20260624 21:37:30 | MainProcess | MainThread | translator_chain.run:45 | ERROR: 'str' object has no attribute 'model_dump'
+Traceback (most recent call last):
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\main.py", line 20, in <module>
+    translator.book_translation(pdf_file_path=config.input_file, source_language=config.source_language, target_language=config.target_language, out_file_format=config.output_format)
+    │          │                              │                                  │                                       │                                       └ <utils.project_config.ProjectConfig object at 0x000001DEEB456900>
+    │          │                              │                                  │                                       └ <utils.project_config.ProjectConfig object at 0x000001DEEB456900>
+    │          │                              │                                  └ <utils.project_config.ProjectConfig object at 0x000001DEEB456900>
+    │          │                              └ <utils.project_config.ProjectConfig object at 0x000001DEEB456900>
+    │          └ <function PDFTranslator.book_translation at 0x000001DEEB427B00>
+    └ <translator.book_translation.PDFTranslator object at 0x000001DEEB457E00>
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\translator\book_translation.py", line 43, in book_translation
+    translation_text, status = self.langchain.run(content, source_language, target_language)
+    │                          │    │         │   │        │                └ 'Chinese'
+    │                          │    │         │   │        └ 'English'
+    │                          │    │         │   └ <book.content.TablesContent object at 0x000001DEEBE9B8C0>
+    │                          │    │         └ <function TranslatorChain.run at 0x000001DEEB427920>
+    │                          │    └ <translator.translator_chain.TranslatorChain object at 0x000001DEEB67C1A0>
+    │                          └ <translator.book_translation.PDFTranslator object at 0x000001DEEB457E00>
+    └ ''
+
+> File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\translator\translator_chain.py", line 37, in run
+    result = self.langchain.invoke({
+             │    │         └ <function RunnableSequence.invoke at 0x000001DEC13B2D40>
+             │    └ ChatPromptTemplate(input_variables=['source_language', 'target_language', 'text'], input_types={}, partial_variables={}, mess...
+             └ <translator.translator_chain.TranslatorChain object at 0x000001DEEB67C1A0>
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 3444, in invoke
+    input_ = context.run(step.invoke, input_, config)
+             │       │   │    │       │       └ {'tags': [], 'metadata': {}, 'callbacks': <langchain_core.callbacks.manager.CallbackManager object at 0x000001DEEBFB63F0>, 'r...
+             │       │   │    │       └ ChatPromptValue(messages=[SystemMessage(content='\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语言，翻译后输出的是：Chinese语言\n    ...
+             │       │   │    └ <function BaseChatModel.invoke at 0x000001DEE91877E0>
+             │       │   └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+             │       └ <method 'run' of '_contextvars.Context' objects>
+             └ <_contextvars.Context object at 0x000001DEEC13F200>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 476, in invoke
+    self.generate_prompt(
+    │    └ <function BaseChatModel.generate_prompt at 0x000001DEE91B4C20>
+    └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1849, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           │    │        │                     │               │            └ {'tags': [], 'metadata': {}, 'run_name': None, 'run_id': None}
+           │    │        │                     │               └ <langchain_core.callbacks.manager.CallbackManager object at 0x000001DEEC101980>
+           │    │        │                     └ None
+           │    │        └ [[SystemMessage(content='\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语言，翻译后输出的是：Chinese语言\n        ', additional_kwargs...
+           │    └ <function BaseChatModel.generate at 0x000001DEE91B4AE0>
+           └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1656, in generate
+    self._generate_with_cache(
+    │    └ <function BaseChatModel._generate_with_cache at 0x000001DEE91B4D60>
+    └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1994, in _generate_with_cache
+    result = self._generate(
+             │    └ <function BaseChatOpenAI._generate at 0x000001DEE923CE00>
+             └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1703, in _generate
+    return self._create_chat_result(response, generation_info)
+           │    │                   │         └ None
+           │    │                   └ '<!DOCTYPE html><html lang="zh-CN" class="__className_f367f3"><head><meta charSet="utf-8"/><meta name="viewport" content="wid...
+           │    └ <function BaseChatOpenAI._create_chat_result at 0x000001DEE923CFE0>
+           └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1763, in _create_chat_result
+    else response.model_dump(
+         └ '<!DOCTYPE html><html lang="zh-CN" class="__className_f367f3"><head><meta charSet="utf-8"/><meta name="viewport" content="wid...
+
+AttributeError: 'str' object has no attribute 'model_dump'
+20260624 21:37:30 | MainProcess | MainThread | file_writer.write_to_pdf:93 | INFO: pdf写入完成
+20260624 21:40:15 | MainProcess | MainThread | project_config.initialize:30 | INFO: 命令行参数:Namespace(config='config.yaml', model_type='OpenAIModel', model_name='', api_key='', input_file='', source_language='', target_language='', output_format='', base_url='https://deepseek.com/v1')
+20260624 21:40:16 | MainProcess | MainThread | translator_chain.run:45 | ERROR: 'str' object has no attribute 'model_dump'
+Traceback (most recent call last):
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\main.py", line 20, in <module>
+    translator.book_translation(pdf_file_path=config.input_file, source_language=config.source_language, target_language=config.target_language, out_file_format=config.output_format)
+    │          │                              │                                  │                                       │                                       └ <utils.project_config.ProjectConfig object at 0x000001E7AC0C3CB0>
+    │          │                              │                                  │                                       └ <utils.project_config.ProjectConfig object at 0x000001E7AC0C3CB0>
+    │          │                              │                                  └ <utils.project_config.ProjectConfig object at 0x000001E7AC0C3CB0>
+    │          │                              └ <utils.project_config.ProjectConfig object at 0x000001E7AC0C3CB0>
+    │          └ <function PDFTranslator.book_translation at 0x000001E7AC097B00>
+    └ <translator.book_translation.PDFTranslator object at 0x000001E7AC2EC050>
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\translator\book_translation.py", line 43, in book_translation
+    translation_text, status = self.langchain.run(content, source_language, target_language)
+    │                          │    │         │   │        │                └ 'Chinese'
+    │                          │    │         │   │        └ 'English'
+    │                          │    │         │   └ <book.content.TablesContent object at 0x000001E7ACAFBA10>
+    │                          │    │         └ <function TranslatorChain.run at 0x000001E7AC097920>
+    │                          │    └ <translator.translator_chain.TranslatorChain object at 0x000001E7AC2EC2F0>
+    │                          └ <translator.book_translation.PDFTranslator object at 0x000001E7AC2EC050>
+    └ ''
+
+> File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\translator\translator_chain.py", line 37, in run
+    result = self.langchain.invoke({
+             │    │         └ <function RunnableSequence.invoke at 0x000001E7820C2D40>
+             │    └ ChatPromptTemplate(input_variables=['source_language', 'target_language', 'text'], input_types={}, partial_variables={}, mess...
+             └ <translator.translator_chain.TranslatorChain object at 0x000001E7AC2EC2F0>
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 3444, in invoke
+    input_ = context.run(step.invoke, input_, config)
+             │       │   │    │       │       └ {'tags': [], 'metadata': {}, 'callbacks': <langchain_core.callbacks.manager.CallbackManager object at 0x000001E7ACC263F0>, 'r...
+             │       │   │    │       └ ChatPromptValue(messages=[SystemMessage(content='\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语言，翻译后输出的是：Chinese语言\n    ...
+             │       │   │    └ <function BaseChatModel.invoke at 0x000001E7A9DF77E0>
+             │       │   └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+             │       └ <method 'run' of '_contextvars.Context' objects>
+             └ <_contextvars.Context object at 0x000001E7ACDAEE40>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 476, in invoke
+    self.generate_prompt(
+    │    └ <function BaseChatModel.generate_prompt at 0x000001E7A9E20C20>
+    └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1849, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           │    │        │                     │               │            └ {'tags': [], 'metadata': {}, 'run_name': None, 'run_id': None}
+           │    │        │                     │               └ <langchain_core.callbacks.manager.CallbackManager object at 0x000001E7ACD6DA50>
+           │    │        │                     └ None
+           │    │        └ [[SystemMessage(content='\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语言，翻译后输出的是：Chinese语言\n        ', additional_kwargs...
+           │    └ <function BaseChatModel.generate at 0x000001E7A9E20AE0>
+           └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1656, in generate
+    self._generate_with_cache(
+    │    └ <function BaseChatModel._generate_with_cache at 0x000001E7A9E20D60>
+    └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1994, in _generate_with_cache
+    result = self._generate(
+             │    └ <function BaseChatOpenAI._generate at 0x000001E7A9EACE00>
+             └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1703, in _generate
+    return self._create_chat_result(response, generation_info)
+           │    │                   │         └ None
+           │    │                   └ '<!DOCTYPE html><html lang="zh-CN" class="__className_f367f3"><head><meta charSet="utf-8"/><meta name="viewport" content="wid...
+           │    └ <function BaseChatOpenAI._create_chat_result at 0x000001E7A9EACFE0>
+           └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1763, in _create_chat_result
+    else response.model_dump(
+         └ '<!DOCTYPE html><html lang="zh-CN" class="__className_f367f3"><head><meta charSet="utf-8"/><meta name="viewport" content="wid...
+
+AttributeError: 'str' object has no attribute 'model_dump'
+20260624 21:40:17 | MainProcess | MainThread | file_writer.write_to_pdf:93 | INFO: pdf写入完成
+20260624 21:41:02 | MainProcess | MainThread | project_config.initialize:30 | INFO: 命令行参数:Namespace(config='config.yaml', model_type='OpenAIModel', model_name='', api_key='', input_file='', source_language='', target_language='', output_format='', base_url='https://deepseek.com/v1')
+20260624 21:45:03 | MainProcess | MainThread | project_config.initialize:30 | INFO: 命令行参数:Namespace(config='config.yaml', model_type='OpenAIModel', model_name='', api_key='', input_file='', source_language='', target_language='', output_format='', base_url='https://deepseek.com/v1')
+20260624 21:45:05 | MainProcess | MainThread | translator_chain.run:45 | ERROR: 'str' object has no attribute 'model_dump'
+Traceback (most recent call last):
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\main.py", line 20, in <module>
+    translator.book_translation(pdf_file_path=config.input_file, source_language=config.source_language, target_language=config.target_language, out_file_format=config.output_format)
+    │          │                              │                                  │                                       │                                       └ <utils.project_config.ProjectConfig object at 0x000001EC36EF7CB0>
+    │          │                              │                                  │                                       └ <utils.project_config.ProjectConfig object at 0x000001EC36EF7CB0>
+    │          │                              │                                  └ <utils.project_config.ProjectConfig object at 0x000001EC36EF7CB0>
+    │          │                              └ <utils.project_config.ProjectConfig object at 0x000001EC36EF7CB0>
+    │          └ <function PDFTranslator.book_translation at 0x000001EC36EC7B00>
+    └ <translator.book_translation.PDFTranslator object at 0x000001EC3711C050>
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\translator\book_translation.py", line 43, in book_translation
+    translation_text, status = self.langchain.run(content, source_language, target_language)
+    │                          │    │         │   │        │                └ 'Chinese'
+    │                          │    │         │   │        └ 'English'
+    │                          │    │         │   └ <book.content.TablesContent object at 0x000001EC3792BA10>
+    │                          │    │         └ <function TranslatorChain.run at 0x000001EC36EC7920>
+    │                          │    └ <translator.translator_chain.TranslatorChain object at 0x000001EC3711C2F0>
+    │                          └ <translator.book_translation.PDFTranslator object at 0x000001EC3711C050>
+    └ ''
+
+> File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\translator\translator_chain.py", line 37, in run
+    result = self.langchain.invoke({
+             │    │         └ <function RunnableSequence.invoke at 0x000001EC0CE82D40>
+             │    └ ChatPromptTemplate(input_variables=['source_language', 'target_language', 'text'], input_types={}, partial_variables={}, mess...
+             └ <translator.translator_chain.TranslatorChain object at 0x000001EC3711C2F0>
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 3444, in invoke
+    input_ = context.run(step.invoke, input_, config)
+             │       │   │    │       │       └ {'tags': [], 'metadata': {}, 'callbacks': <langchain_core.callbacks.manager.CallbackManager object at 0x000001EC37A563F0>, 'r...
+             │       │   │    │       └ ChatPromptValue(messages=[SystemMessage(content='\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语言，翻译后输出的是：Chinese语言\n    ...
+             │       │   │    └ <function BaseChatModel.invoke at 0x000001EC34C277E0>
+             │       │   └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+             │       └ <method 'run' of '_contextvars.Context' objects>
+             └ <_contextvars.Context object at 0x000001EC37BDF000>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 476, in invoke
+    self.generate_prompt(
+    │    └ <function BaseChatModel.generate_prompt at 0x000001EC34C54C20>
+    └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1849, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           │    │        │                     │               │            └ {'tags': [], 'metadata': {}, 'run_name': None, 'run_id': None}
+           │    │        │                     │               └ <langchain_core.callbacks.manager.CallbackManager object at 0x000001EC37B9D980>
+           │    │        │                     └ None
+           │    │        └ [[SystemMessage(content='\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语言，翻译后输出的是：Chinese语言\n        ', additional_kwargs...
+           │    └ <function BaseChatModel.generate at 0x000001EC34C54AE0>
+           └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1656, in generate
+    self._generate_with_cache(
+    │    └ <function BaseChatModel._generate_with_cache at 0x000001EC34C54D60>
+    └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1994, in _generate_with_cache
+    result = self._generate(
+             │    └ <function BaseChatOpenAI._generate at 0x000001EC34CDCE00>
+             └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1703, in _generate
+    return self._create_chat_result(response, generation_info)
+           │    │                   │         └ None
+           │    │                   └ '<!DOCTYPE html><html lang="zh-CN" class="__className_f367f3"><head><meta charSet="utf-8"/><meta name="viewport" content="wid...
+           │    └ <function BaseChatOpenAI._create_chat_result at 0x000001EC34CDCFE0>
+           └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1763, in _create_chat_result
+    else response.model_dump(
+         └ '<!DOCTYPE html><html lang="zh-CN" class="__className_f367f3"><head><meta charSet="utf-8"/><meta name="viewport" content="wid...
+
+AttributeError: 'str' object has no attribute 'model_dump'
+20260624 21:45:05 | MainProcess | MainThread | file_writer.write_to_pdf:93 | INFO: pdf写入完成
+20260624 21:46:09 | MainProcess | MainThread | project_config.initialize:30 | INFO: 命令行参数:Namespace(config='config.yaml', model_type='OpenAIModel', model_name='', api_key='', input_file='', source_language='', target_language='', output_format='', base_url='https://deepseek.com/v1')
+20260624 21:47:56 | MainProcess | MainThread | project_config.initialize:30 | INFO: 命令行参数:Namespace(config='config.yaml', model_type='OpenAIModel', model_name='', api_key='', input_file='', source_language='', target_language='', output_format='', base_url='https://deepseek.com/v1')
+20260624 21:48:26 | MainProcess | MainThread | project_config.initialize:30 | INFO: 命令行参数:Namespace(config='config.yaml', model_type='OpenAIModel', model_name='', api_key='', input_file='', source_language='', target_language='', output_format='', base_url='https://deepseek.com/v1')
+20260624 21:48:53 | MainProcess | MainThread | project_config.initialize:30 | INFO: 命令行参数:Namespace(config='config.yaml', model_type='OpenAIModel', model_name='', api_key='', input_file='', source_language='', target_language='', output_format='', base_url='https://deepseek.com/v1')
+20260624 21:48:54 | MainProcess | MainThread | translator_chain.run:43 | ERROR: 'str' object has no attribute 'model_dump'
+Traceback (most recent call last):
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\main.py", line 20, in <module>
+    translator.book_translation(pdf_file_path=config.input_file, source_language=config.source_language, target_language=config.target_language, out_file_format=config.output_format)
+    │          │                              │                                  │                                       │                                       └ <utils.project_config.ProjectConfig object at 0x0000023E57EB3CB0>
+    │          │                              │                                  │                                       └ <utils.project_config.ProjectConfig object at 0x0000023E57EB3CB0>
+    │          │                              │                                  └ <utils.project_config.ProjectConfig object at 0x0000023E57EB3CB0>
+    │          │                              └ <utils.project_config.ProjectConfig object at 0x0000023E57EB3CB0>
+    │          └ <function PDFTranslator.book_translation at 0x0000023E57E87B00>
+    └ <translator.book_translation.PDFTranslator object at 0x0000023E580E4050>
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\translator\book_translation.py", line 43, in book_translation
+    translation_text, status = self.langchain.run(content, source_language, target_language)
+    │                          │    │         │   │        │                └ 'Chinese'
+    │                          │    │         │   │        └ 'English'
+    │                          │    │         │   └ <book.content.TablesContent object at 0x0000023E588EBA10>
+    │                          │    │         └ <function TranslatorChain.run at 0x0000023E57E87920>
+    │                          │    └ <translator.translator_chain.TranslatorChain object at 0x0000023E580E42F0>
+    │                          └ <translator.book_translation.PDFTranslator object at 0x0000023E580E4050>
+    └ ''
+
+> File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\translator\translator_chain.py", line 35, in run
+    result = self.langchain.invoke({
+             │    │         └ <function RunnableSequence.invoke at 0x0000023E2DE82D40>
+             │    └ ChatPromptTemplate(input_variables=['source_language', 'target_language', 'text'], input_types={}, partial_variables={}, mess...
+             └ <translator.translator_chain.TranslatorChain object at 0x0000023E580E42F0>
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 3444, in invoke
+    input_ = context.run(step.invoke, input_, config)
+             │       │   │    │       │       └ {'tags': [], 'metadata': {}, 'callbacks': <langchain_core.callbacks.manager.CallbackManager object at 0x0000023E58A163F0>, 'r...
+             │       │   │    │       └ ChatPromptValue(messages=[SystemMessage(content='\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语言，翻译后输出的是：Chinese语言\n    ...
+             │       │   │    └ <function BaseChatModel.invoke at 0x0000023E55BE37E0>
+             │       │   └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+             │       └ <method 'run' of '_contextvars.Context' objects>
+             └ <_contextvars.Context object at 0x0000023E58B9EE40>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 476, in invoke
+    self.generate_prompt(
+    │    └ <function BaseChatModel.generate_prompt at 0x0000023E55C10C20>
+    └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1849, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           │    │        │                     │               │            └ {'tags': [], 'metadata': {}, 'run_name': None, 'run_id': None}
+           │    │        │                     │               └ <langchain_core.callbacks.manager.CallbackManager object at 0x0000023E58B65980>
+           │    │        │                     └ None
+           │    │        └ [[SystemMessage(content='\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语言，翻译后输出的是：Chinese语言\n        ', additional_kwargs...
+           │    └ <function BaseChatModel.generate at 0x0000023E55C10AE0>
+           └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1656, in generate
+    self._generate_with_cache(
+    │    └ <function BaseChatModel._generate_with_cache at 0x0000023E55C10D60>
+    └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1994, in _generate_with_cache
+    result = self._generate(
+             │    └ <function BaseChatOpenAI._generate at 0x0000023E55C98E00>
+             └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1703, in _generate
+    return self._create_chat_result(response, generation_info)
+           │    │                   │         └ None
+           │    │                   └ '<!DOCTYPE html><html lang="zh-CN" class="__className_f367f3"><head><meta charSet="utf-8"/><meta name="viewport" content="wid...
+           │    └ <function BaseChatOpenAI._create_chat_result at 0x0000023E55C98FE0>
+           └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1763, in _create_chat_result
+    else response.model_dump(
+         └ '<!DOCTYPE html><html lang="zh-CN" class="__className_f367f3"><head><meta charSet="utf-8"/><meta name="viewport" content="wid...
+
+AttributeError: 'str' object has no attribute 'model_dump'
+20260624 21:48:55 | MainProcess | MainThread | file_writer.write_to_pdf:93 | INFO: pdf写入完成
+20260624 21:56:07 | MainProcess | MainThread | project_config.initialize:30 | INFO: 命令行参数:Namespace(config='config.yaml', model_type='OpenAIModel', model_name='', api_key='', input_file='', source_language='', target_language='', output_format='', base_url='https://deepseek.com/v1')
+20260624 21:56:08 | MainProcess | MainThread | translator_chain.run:46 | ERROR: 'str' object has no attribute 'model_dump'
+Traceback (most recent call last):
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\main.py", line 20, in <module>
+    translator.book_translation(pdf_file_path=config.input_file, source_language=config.source_language, target_language=config.target_language, out_file_format=config.output_format)
+    │          │                              │                                  │                                       │                                       └ <utils.project_config.ProjectConfig object at 0x000001F806637CB0>
+    │          │                              │                                  │                                       └ <utils.project_config.ProjectConfig object at 0x000001F806637CB0>
+    │          │                              │                                  └ <utils.project_config.ProjectConfig object at 0x000001F806637CB0>
+    │          │                              └ <utils.project_config.ProjectConfig object at 0x000001F806637CB0>
+    │          └ <function PDFTranslator.book_translation at 0x000001F806607B00>
+    └ <translator.book_translation.PDFTranslator object at 0x000001F806860050>
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\translator\book_translation.py", line 43, in book_translation
+    translation_text, status = self.langchain.run(content, source_language, target_language)
+                               │    │         │   │        │                └ 'Chinese'
+                               │    │         │   │        └ 'English'
+                               │    │         │   └ <book.content.Content object at 0x000001F8070678C0>
+                               │    │         └ <function TranslatorChain.run at 0x000001F806607920>
+                               │    └ <translator.translator_chain.TranslatorChain object at 0x000001F8068602F0>
+                               └ <translator.book_translation.PDFTranslator object at 0x000001F806860050>
+
+> File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\translator\translator_chain.py", line 38, in run
+    result = self.langchain.invoke({
+             │    │         └ <function RunnableSequence.invoke at 0x000001F85C552D40>
+             │    └ ChatPromptTemplate(input_variables=['source_language', 'target_language', 'text'], input_types={}, partial_variables={}, mess...
+             └ <translator.translator_chain.TranslatorChain object at 0x000001F8068602F0>
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 3444, in invoke
+    input_ = context.run(step.invoke, input_, config)
+             │       │   │    │       │       └ {'tags': [], 'metadata': {}, 'callbacks': <langchain_core.callbacks.manager.CallbackManager object at 0x000001F8071965D0>, 'r...
+             │       │   │    │       └ ChatPromptValue(messages=[SystemMessage(content='\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语言，翻译后输出的是：Chinese语言\n    ...
+             │       │   │    └ <function BaseChatModel.invoke at 0x000001F8043677E0>
+             │       │   └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+             │       └ <method 'run' of '_contextvars.Context' objects>
+             └ <_contextvars.Context object at 0x000001F807318EC0>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 476, in invoke
+    self.generate_prompt(
+    │    └ <function BaseChatModel.generate_prompt at 0x000001F804394C20>
+    └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1849, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           │    │        │                     │               │            └ {'tags': [], 'metadata': {}, 'run_name': None, 'run_id': None}
+           │    │        │                     │               └ <langchain_core.callbacks.manager.CallbackManager object at 0x000001F8072DD980>
+           │    │        │                     └ None
+           │    │        └ [[SystemMessage(content='\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语言，翻译后输出的是：Chinese语言\n        ', additional_kwargs...
+           │    └ <function BaseChatModel.generate at 0x000001F804394AE0>
+           └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1656, in generate
+    self._generate_with_cache(
+    │    └ <function BaseChatModel._generate_with_cache at 0x000001F804394D60>
+    └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1994, in _generate_with_cache
+    result = self._generate(
+             │    └ <function BaseChatOpenAI._generate at 0x000001F80441CE00>
+             └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1703, in _generate
+    return self._create_chat_result(response, generation_info)
+           │    │                   │         └ None
+           │    │                   └ '<!DOCTYPE html><html lang="zh-CN" class="__className_f367f3"><head><meta charSet="utf-8"/><meta name="viewport" content="wid...
+           │    └ <function BaseChatOpenAI._create_chat_result at 0x000001F80441CFE0>
+           └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1763, in _create_chat_result
+    else response.model_dump(
+         └ '<!DOCTYPE html><html lang="zh-CN" class="__className_f367f3"><head><meta charSet="utf-8"/><meta name="viewport" content="wid...
+
+AttributeError: 'str' object has no attribute 'model_dump'
+20260624 21:56:08 | MainProcess | MainThread | content.set_translation:35 | WARNING: 输入的translation不是字符串！
+20260624 21:56:08 | MainProcess | MainThread | translator_chain.run:46 | ERROR: 'str' object has no attribute 'model_dump'
+Traceback (most recent call last):
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\main.py", line 20, in <module>
+    translator.book_translation(pdf_file_path=config.input_file, source_language=config.source_language, target_language=config.target_language, out_file_format=config.output_format)
+    │          │                              │                                  │                                       │                                       └ <utils.project_config.ProjectConfig object at 0x000001F806637CB0>
+    │          │                              │                                  │                                       └ <utils.project_config.ProjectConfig object at 0x000001F806637CB0>
+    │          │                              │                                  └ <utils.project_config.ProjectConfig object at 0x000001F806637CB0>
+    │          │                              └ <utils.project_config.ProjectConfig object at 0x000001F806637CB0>
+    │          └ <function PDFTranslator.book_translation at 0x000001F806607B00>
+    └ <translator.book_translation.PDFTranslator object at 0x000001F806860050>
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\translator\book_translation.py", line 43, in book_translation
+    translation_text, status = self.langchain.run(content, source_language, target_language)
+    │                          │    │         │   │        │                └ 'Chinese'
+    │                          │    │         │   │        └ 'English'
+    │                          │    │         │   └ <book.content.TablesContent object at 0x000001F807067A10>
+    │                          │    │         └ <function TranslatorChain.run at 0x000001F806607920>
+    │                          │    └ <translator.translator_chain.TranslatorChain object at 0x000001F8068602F0>
+    │                          └ <translator.book_translation.PDFTranslator object at 0x000001F806860050>
+    └ ''
+
+> File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\translator\translator_chain.py", line 38, in run
+    result = self.langchain.invoke({
+             │    │         └ <function RunnableSequence.invoke at 0x000001F85C552D40>
+             │    └ ChatPromptTemplate(input_variables=['source_language', 'target_language', 'text'], input_types={}, partial_variables={}, mess...
+             └ <translator.translator_chain.TranslatorChain object at 0x000001F8068602F0>
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 3444, in invoke
+    input_ = context.run(step.invoke, input_, config)
+             │       │   │    │       │       └ {'tags': [], 'metadata': {}, 'callbacks': <langchain_core.callbacks.manager.CallbackManager object at 0x000001F806BF01D0>, 'r...
+             │       │   │    │       └ ChatPromptValue(messages=[SystemMessage(content='\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语言，翻译后输出的是：Chinese语言\n    ...
+             │       │   │    └ <function BaseChatModel.invoke at 0x000001F8043677E0>
+             │       │   └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+             │       └ <method 'run' of '_contextvars.Context' objects>
+             └ <_contextvars.Context object at 0x000001F807307A40>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 476, in invoke
+    self.generate_prompt(
+    │    └ <function BaseChatModel.generate_prompt at 0x000001F804394C20>
+    └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1849, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           │    │        │                     │               │            └ {'tags': [], 'metadata': {}, 'run_name': None, 'run_id': None}
+           │    │        │                     │               └ <langchain_core.callbacks.manager.CallbackManager object at 0x000001F8072C71D0>
+           │    │        │                     └ None
+           │    │        └ [[SystemMessage(content='\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语言，翻译后输出的是：Chinese语言\n        ', additional_kwargs...
+           │    └ <function BaseChatModel.generate at 0x000001F804394AE0>
+           └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1656, in generate
+    self._generate_with_cache(
+    │    └ <function BaseChatModel._generate_with_cache at 0x000001F804394D60>
+    └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1994, in _generate_with_cache
+    result = self._generate(
+             │    └ <function BaseChatOpenAI._generate at 0x000001F80441CE00>
+             └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1703, in _generate
+    return self._create_chat_result(response, generation_info)
+           │    │                   │         └ None
+           │    │                   └ '<!DOCTYPE html><html lang="zh-CN" class="__className_f367f3"><head><meta charSet="utf-8"/><meta name="viewport" content="wid...
+           │    └ <function BaseChatOpenAI._create_chat_result at 0x000001F80441CFE0>
+           └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1763, in _create_chat_result
+    else response.model_dump(
+         └ '<!DOCTYPE html><html lang="zh-CN" class="__className_f367f3"><head><meta charSet="utf-8"/><meta name="viewport" content="wid...
+
+AttributeError: 'str' object has no attribute 'model_dump'
+20260624 21:56:08 | MainProcess | MainThread | file_writer.write_to_pdf:93 | INFO: pdf写入完成
+20260624 21:58:39 | MainProcess | MainThread | project_config.initialize:30 | INFO: 命令行参数:Namespace(config='config.yaml', model_type='OpenAIModel', model_name='', api_key='', input_file='', source_language='', target_language='', output_format='', base_url='https://deepseek.com/v1')
+20260624 21:58:40 | MainProcess | MainThread | translator_chain.run:46 | ERROR: 'str' object has no attribute 'model_dump'
+Traceback (most recent call last):
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\main.py", line 20, in <module>
+    translator.book_translation(pdf_file_path=config.input_file, source_language=config.source_language, target_language=config.target_language, out_file_format=config.output_format)
+    │          │                              │                                  │                                       │                                       └ <utils.project_config.ProjectConfig object at 0x00000197495B7CB0>
+    │          │                              │                                  │                                       └ <utils.project_config.ProjectConfig object at 0x00000197495B7CB0>
+    │          │                              │                                  └ <utils.project_config.ProjectConfig object at 0x00000197495B7CB0>
+    │          │                              └ <utils.project_config.ProjectConfig object at 0x00000197495B7CB0>
+    │          └ <function PDFTranslator.book_translation at 0x0000019749587B00>
+    └ <translator.book_translation.PDFTranslator object at 0x00000197497E0050>
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\translator\book_translation.py", line 43, in book_translation
+    translation_text, status = self.langchain.run(content, source_language, target_language)
+                               │    │         │   │        │                └ 'Chinese'
+                               │    │         │   │        └ 'English'
+                               │    │         │   └ <book.content.Content object at 0x0000019749FE78C0>
+                               │    │         └ <function TranslatorChain.run at 0x0000019749587920>
+                               │    └ <translator.translator_chain.TranslatorChain object at 0x00000197497E02F0>
+                               └ <translator.book_translation.PDFTranslator object at 0x00000197497E0050>
+
+> File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\translator\translator_chain.py", line 38, in run
+    result = self.langchain.invoke({
+             │    │         └ <function RunnableSequence.invoke at 0x000001971F542D40>
+             │    └ ChatPromptTemplate(input_variables=['source_language', 'target_language', 'text'], input_types={}, partial_variables={}, mess...
+             └ <translator.translator_chain.TranslatorChain object at 0x00000197497E02F0>
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 3444, in invoke
+    input_ = context.run(step.invoke, input_, config)
+             │       │   │    │       │       └ {'tags': [], 'metadata': {}, 'callbacks': <langchain_core.callbacks.manager.CallbackManager object at 0x000001974A1165D0>, 'r...
+             │       │   │    │       └ ChatPromptValue(messages=[SystemMessage(content='\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语言，翻译后输出的是：Chinese语言\n    ...
+             │       │   │    └ <function BaseChatModel.invoke at 0x00000197472E77E0>
+             │       │   └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+             │       └ <method 'run' of '_contextvars.Context' objects>
+             └ <_contextvars.Context object at 0x000001974A298C00>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 476, in invoke
+    self.generate_prompt(
+    │    └ <function BaseChatModel.generate_prompt at 0x0000019747310C20>
+    └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1849, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           │    │        │                     │               │            └ {'tags': [], 'metadata': {}, 'run_name': None, 'run_id': None}
+           │    │        │                     │               └ <langchain_core.callbacks.manager.CallbackManager object at 0x000001974A261980>
+           │    │        │                     └ None
+           │    │        └ [[SystemMessage(content='\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语言，翻译后输出的是：Chinese语言\n        ', additional_kwargs...
+           │    └ <function BaseChatModel.generate at 0x0000019747310AE0>
+           └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1656, in generate
+    self._generate_with_cache(
+    │    └ <function BaseChatModel._generate_with_cache at 0x0000019747310D60>
+    └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1994, in _generate_with_cache
+    result = self._generate(
+             │    └ <function BaseChatOpenAI._generate at 0x0000019747398E00>
+             └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1703, in _generate
+    return self._create_chat_result(response, generation_info)
+           │    │                   │         └ None
+           │    │                   └ '<!DOCTYPE html><html lang="zh-CN" class="__className_f367f3"><head><meta charSet="utf-8"/><meta name="viewport" content="wid...
+           │    └ <function BaseChatOpenAI._create_chat_result at 0x0000019747398FE0>
+           └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1763, in _create_chat_result
+    else response.model_dump(
+         └ '<!DOCTYPE html><html lang="zh-CN" class="__className_f367f3"><head><meta charSet="utf-8"/><meta name="viewport" content="wid...
+
+AttributeError: 'str' object has no attribute 'model_dump'
+20260624 21:58:40 | MainProcess | MainThread | content.set_translation:35 | WARNING: 输入的translation不是字符串！
+20260624 21:58:41 | MainProcess | MainThread | translator_chain.run:46 | ERROR: 'str' object has no attribute 'model_dump'
+Traceback (most recent call last):
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\main.py", line 20, in <module>
+    translator.book_translation(pdf_file_path=config.input_file, source_language=config.source_language, target_language=config.target_language, out_file_format=config.output_format)
+    │          │                              │                                  │                                       │                                       └ <utils.project_config.ProjectConfig object at 0x00000197495B7CB0>
+    │          │                              │                                  │                                       └ <utils.project_config.ProjectConfig object at 0x00000197495B7CB0>
+    │          │                              │                                  └ <utils.project_config.ProjectConfig object at 0x00000197495B7CB0>
+    │          │                              └ <utils.project_config.ProjectConfig object at 0x00000197495B7CB0>
+    │          └ <function PDFTranslator.book_translation at 0x0000019749587B00>
+    └ <translator.book_translation.PDFTranslator object at 0x00000197497E0050>
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\translator\book_translation.py", line 43, in book_translation
+    translation_text, status = self.langchain.run(content, source_language, target_language)
+    │                          │    │         │   │        │                └ 'Chinese'
+    │                          │    │         │   │        └ 'English'
+    │                          │    │         │   └ <book.content.TablesContent object at 0x0000019749FE7A10>
+    │                          │    │         └ <function TranslatorChain.run at 0x0000019749587920>
+    │                          │    └ <translator.translator_chain.TranslatorChain object at 0x00000197497E02F0>
+    │                          └ <translator.book_translation.PDFTranslator object at 0x00000197497E0050>
+    └ ''
+
+> File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\translator\translator_chain.py", line 38, in run
+    result = self.langchain.invoke({
+             │    │         └ <function RunnableSequence.invoke at 0x000001971F542D40>
+             │    └ ChatPromptTemplate(input_variables=['source_language', 'target_language', 'text'], input_types={}, partial_variables={}, mess...
+             └ <translator.translator_chain.TranslatorChain object at 0x00000197497E02F0>
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 3444, in invoke
+    input_ = context.run(step.invoke, input_, config)
+             │       │   │    │       │       └ {'tags': [], 'metadata': {}, 'callbacks': <langchain_core.callbacks.manager.CallbackManager object at 0x0000019749B5BC50>, 'r...
+             │       │   │    │       └ ChatPromptValue(messages=[SystemMessage(content='\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语言，翻译后输出的是：Chinese语言\n    ...
+             │       │   │    └ <function BaseChatModel.invoke at 0x00000197472E77E0>
+             │       │   └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+             │       └ <method 'run' of '_contextvars.Context' objects>
+             └ <_contextvars.Context object at 0x000001974A28B780>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 476, in invoke
+    self.generate_prompt(
+    │    └ <function BaseChatModel.generate_prompt at 0x0000019747310C20>
+    └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1849, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           │    │        │                     │               │            └ {'tags': [], 'metadata': {}, 'run_name': None, 'run_id': None}
+           │    │        │                     │               └ <langchain_core.callbacks.manager.CallbackManager object at 0x000001974B3330D0>
+           │    │        │                     └ None
+           │    │        └ [[SystemMessage(content='\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语言，翻译后输出的是：Chinese语言\n        ', additional_kwargs...
+           │    └ <function BaseChatModel.generate at 0x0000019747310AE0>
+           └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1656, in generate
+    self._generate_with_cache(
+    │    └ <function BaseChatModel._generate_with_cache at 0x0000019747310D60>
+    └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1994, in _generate_with_cache
+    result = self._generate(
+             │    └ <function BaseChatOpenAI._generate at 0x0000019747398E00>
+             └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1703, in _generate
+    return self._create_chat_result(response, generation_info)
+           │    │                   │         └ None
+           │    │                   └ '<!DOCTYPE html><html lang="zh-CN" class="__className_f367f3"><head><meta charSet="utf-8"/><meta name="viewport" content="wid...
+           │    └ <function BaseChatOpenAI._create_chat_result at 0x0000019747398FE0>
+           └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1763, in _create_chat_result
+    else response.model_dump(
+         └ '<!DOCTYPE html><html lang="zh-CN" class="__className_f367f3"><head><meta charSet="utf-8"/><meta name="viewport" content="wid...
+
+AttributeError: 'str' object has no attribute 'model_dump'
+20260624 21:58:41 | MainProcess | MainThread | file_writer.write_to_pdf:93 | INFO: pdf写入完成
+20260624 22:02:38 | MainProcess | MainThread | project_config.initialize:30 | INFO: 命令行参数:Namespace(config='config.yaml', model_type='OpenAIModel', model_name='', api_key='', input_file='', source_language='', target_language='', output_format='', base_url='https://deepseek.com/v1')
+20260624 22:02:40 | MainProcess | MainThread | translator_chain.run:46 | ERROR: 'str' object has no attribute 'model_dump'
+Traceback (most recent call last):
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\main.py", line 20, in <module>
+    translator.book_translation(pdf_file_path=config.input_file, source_language=config.source_language, target_language=config.target_language, out_file_format=config.output_format)
+    │          │                              │                                  │                                       │                                       └ <utils.project_config.ProjectConfig object at 0x000002D2F10E7CB0>
+    │          │                              │                                  │                                       └ <utils.project_config.ProjectConfig object at 0x000002D2F10E7CB0>
+    │          │                              │                                  └ <utils.project_config.ProjectConfig object at 0x000002D2F10E7CB0>
+    │          │                              └ <utils.project_config.ProjectConfig object at 0x000002D2F10E7CB0>
+    │          └ <function PDFTranslator.book_translation at 0x000002D2F10B7B00>
+    └ <translator.book_translation.PDFTranslator object at 0x000002D2F1310050>
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\translator\book_translation.py", line 43, in book_translation
+    translation_text, status = self.langchain.run(content, source_language, target_language)
+                               │    │         │   │        │                └ 'Chinese'
+                               │    │         │   │        └ 'English'
+                               │    │         │   └ <book.content.Content object at 0x000002D2F1B178C0>
+                               │    │         └ <function TranslatorChain.run at 0x000002D2F10B7920>
+                               │    └ <translator.translator_chain.TranslatorChain object at 0x000002D2F13102F0>
+                               └ <translator.book_translation.PDFTranslator object at 0x000002D2F1310050>
+
+> File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\translator\translator_chain.py", line 38, in run
+    result = self.langchain.invoke({
+             │    │         └ <function RunnableSequence.invoke at 0x000002D2C7082D40>
+             │    └ ChatPromptTemplate(input_variables=['source_language', 'target_language', 'text'], input_types={}, partial_variables={}, mess...
+             └ <translator.translator_chain.TranslatorChain object at 0x000002D2F13102F0>
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 3444, in invoke
+    input_ = context.run(step.invoke, input_, config)
+             │       │   │    │       │       └ {'tags': [], 'metadata': {}, 'callbacks': <langchain_core.callbacks.manager.CallbackManager object at 0x000002D2F1C465D0>, 'r...
+             │       │   │    │       └ ChatPromptValue(messages=[SystemMessage(content='\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语言，翻译后输出的是：Chinese语言\n    ...
+             │       │   │    └ <function BaseChatModel.invoke at 0x000002D2EEE137E0>
+             │       │   └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+             │       └ <method 'run' of '_contextvars.Context' objects>
+             └ <_contextvars.Context object at 0x000002D2F2D98B00>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 476, in invoke
+    self.generate_prompt(
+    │    └ <function BaseChatModel.generate_prompt at 0x000002D2EEE40C20>
+    └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1849, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           │    │        │                     │               │            └ {'tags': [], 'metadata': {}, 'run_name': None, 'run_id': None}
+           │    │        │                     │               └ <langchain_core.callbacks.manager.CallbackManager object at 0x000002D2F2D5D980>
+           │    │        │                     └ None
+           │    │        └ [[SystemMessage(content='\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语言，翻译后输出的是：Chinese语言\n        ', additional_kwargs...
+           │    └ <function BaseChatModel.generate at 0x000002D2EEE40AE0>
+           └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1656, in generate
+    self._generate_with_cache(
+    │    └ <function BaseChatModel._generate_with_cache at 0x000002D2EEE40D60>
+    └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1994, in _generate_with_cache
+    result = self._generate(
+             │    └ <function BaseChatOpenAI._generate at 0x000002D2EEEC8E00>
+             └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1703, in _generate
+    return self._create_chat_result(response, generation_info)
+           │    │                   │         └ None
+           │    │                   └ '<!DOCTYPE html><html lang="zh-CN" class="__className_f367f3"><head><meta charSet="utf-8"/><meta name="viewport" content="wid...
+           │    └ <function BaseChatOpenAI._create_chat_result at 0x000002D2EEEC8FE0>
+           └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1763, in _create_chat_result
+    else response.model_dump(
+         └ '<!DOCTYPE html><html lang="zh-CN" class="__className_f367f3"><head><meta charSet="utf-8"/><meta name="viewport" content="wid...
+
+AttributeError: 'str' object has no attribute 'model_dump'
+20260624 22:02:40 | MainProcess | MainThread | content.set_translation:35 | WARNING: 输入的translation不是字符串！
+20260624 22:02:40 | MainProcess | MainThread | translator_chain.run:46 | ERROR: 'str' object has no attribute 'model_dump'
+Traceback (most recent call last):
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\main.py", line 20, in <module>
+    translator.book_translation(pdf_file_path=config.input_file, source_language=config.source_language, target_language=config.target_language, out_file_format=config.output_format)
+    │          │                              │                                  │                                       │                                       └ <utils.project_config.ProjectConfig object at 0x000002D2F10E7CB0>
+    │          │                              │                                  │                                       └ <utils.project_config.ProjectConfig object at 0x000002D2F10E7CB0>
+    │          │                              │                                  └ <utils.project_config.ProjectConfig object at 0x000002D2F10E7CB0>
+    │          │                              └ <utils.project_config.ProjectConfig object at 0x000002D2F10E7CB0>
+    │          └ <function PDFTranslator.book_translation at 0x000002D2F10B7B00>
+    └ <translator.book_translation.PDFTranslator object at 0x000002D2F1310050>
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\translator\book_translation.py", line 43, in book_translation
+    translation_text, status = self.langchain.run(content, source_language, target_language)
+    │                          │    │         │   │        │                └ 'Chinese'
+    │                          │    │         │   │        └ 'English'
+    │                          │    │         │   └ <book.content.TablesContent object at 0x000002D2F1B17A10>
+    │                          │    │         └ <function TranslatorChain.run at 0x000002D2F10B7920>
+    │                          │    └ <translator.translator_chain.TranslatorChain object at 0x000002D2F13102F0>
+    │                          └ <translator.book_translation.PDFTranslator object at 0x000002D2F1310050>
+    └ ''
+
+> File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\translator\translator_chain.py", line 38, in run
+    result = self.langchain.invoke({
+             │    │         └ <function RunnableSequence.invoke at 0x000002D2C7082D40>
+             │    └ ChatPromptTemplate(input_variables=['source_language', 'target_language', 'text'], input_types={}, partial_variables={}, mess...
+             └ <translator.translator_chain.TranslatorChain object at 0x000002D2F13102F0>
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 3444, in invoke
+    input_ = context.run(step.invoke, input_, config)
+             │       │   │    │       │       └ {'tags': [], 'metadata': {}, 'callbacks': <langchain_core.callbacks.manager.CallbackManager object at 0x000002D2F16A0150>, 'r...
+             │       │   │    │       └ ChatPromptValue(messages=[SystemMessage(content='\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语言，翻译后输出的是：Chinese语言\n    ...
+             │       │   │    └ <function BaseChatModel.invoke at 0x000002D2EEE137E0>
+             │       │   └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+             │       └ <method 'run' of '_contextvars.Context' objects>
+             └ <_contextvars.Context object at 0x000002D2F2D8B6C0>
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 476, in invoke
+    self.generate_prompt(
+    │    └ <function BaseChatModel.generate_prompt at 0x000002D2EEE40C20>
+    └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1849, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           │    │        │                     │               │            └ {'tags': [], 'metadata': {}, 'run_name': None, 'run_id': None}
+           │    │        │                     │               └ <langchain_core.callbacks.manager.CallbackManager object at 0x000002D2F2D47150>
+           │    │        │                     └ None
+           │    │        └ [[SystemMessage(content='\n        你是一位翻译专家，精通人类各国语言，\n        输入的是：English语言，翻译后输出的是：Chinese语言\n        ', additional_kwargs...
+           │    └ <function BaseChatModel.generate at 0x000002D2EEE40AE0>
+           └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1656, in generate
+    self._generate_with_cache(
+    │    └ <function BaseChatModel._generate_with_cache at 0x000002D2EEE40D60>
+    └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1994, in _generate_with_cache
+    result = self._generate(
+             │    └ <function BaseChatOpenAI._generate at 0x000002D2EEEC8E00>
+             └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1703, in _generate
+    return self._create_chat_result(response, generation_info)
+           │    │                   │         └ None
+           │    │                   └ '<!DOCTYPE html><html lang="zh-CN" class="__className_f367f3"><head><meta charSet="utf-8"/><meta name="viewport" content="wid...
+           │    └ <function BaseChatOpenAI._create_chat_result at 0x000002D2EEEC8FE0>
+           └ ChatOpenAI(metadata={'lc_versions': {'langchain-core': '1.4.7', 'langchain': '1.3.9', 'langchain-openai': '1.3.2'}}, output_v...
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1763, in _create_chat_result
+    else response.model_dump(
+         └ '<!DOCTYPE html><html lang="zh-CN" class="__className_f367f3"><head><meta charSet="utf-8"/><meta name="viewport" content="wid...
+
+AttributeError: 'str' object has no attribute 'model_dump'
+20260624 22:02:40 | MainProcess | MainThread | file_writer.write_to_pdf:93 | INFO: pdf写入完成
+20260624 22:06:13 | MainProcess | MainThread | project_config.initialize:30 | INFO: 命令行参数:Namespace(config='config.yaml', model_type='OpenAIModel', model_name='', api_key='', input_file='', source_language='', target_language='', output_format='', base_url='https://api.deepseek.com/v1')
+20260624 22:06:20 | MainProcess | MainThread | translator_chain.run:44 | INFO: 翻译后的内容：content='测试数据  \n本数据集包含两个由OpenAI的AI语言模型ChatGPT提供的测试样本。  \n这些样本包括一个Markdown表格和一段英文文本，可用于测试支持文本和表格格式的英译中翻译软件。  \n\n文本测试  \n那只敏捷的棕色狐狸跳过了懒惰的狗。这个全字母句包含了英文字母表中的每一个字母至少一次。全字母句常被用来测试字体、键盘和其他与文本相关的工具。除了英语以外，许多其他语言也有全字母句。由于语言的独特性，有些全字母句更难构造。  \n\n表格测试' additional_kwargs={'refusal': None} response_metadata={'token_usage': {'completion_tokens': 504, 'prompt_tokens': 180, 'total_tokens': 684, 'completion_tokens_details': {'accepted_prediction_tokens': None, 'audio_tokens': None, 'reasoning_tokens': 384, 'rejected_prediction_tokens': None}, 'prompt_tokens_details': {'audio_tokens': None, 'cached_tokens': 0}, 'prompt_cache_hit_tokens': 0, 'prompt_cache_miss_tokens': 180}, 'model_provider': 'openai', 'model_name': 'deepseek-v4-flash', 'system_fingerprint': 'fp_8b330d02d0_prod0820_fp8_kvcache_20260402', 'id': '7b8f3693-974d-4458-8ca1-4c3749d65c7b', 'finish_reason': 'stop', 'logprobs': None} id='lc_run--019ef9f3-f1df-71a1-94c6-f81157655d9a-0' tool_calls=[] invalid_tool_calls=[] usage_metadata={'input_tokens': 180, 'output_tokens': 504, 'total_tokens': 684, 'input_token_details': {'cache_read': 0}, 'output_token_details': {'reasoning': 384}}
+20260624 22:06:20 | MainProcess | MainThread | content.set_translation:35 | WARNING: 输入的translation不是字符串！
+20260624 22:06:25 | MainProcess | MainThread | translator_chain.run:44 | INFO: 翻译后的内容：content='水果, 颜色, 价格 (美元)\n苹果, 红色, 1.20\n香蕉, 黄色, 0.50\n橙子, 橙色, 0.80\n草莓, 红色, 2.50\n蓝莓, 蓝色, 3.00\n猕猴桃, 绿色, 1.00\n芒果, 橙色, 1.50\n葡萄, 紫色, 2.00' additional_kwargs={'refusal': None} response_metadata={'token_usage': {'completion_tokens': 457, 'prompt_tokens': 153, 'total_tokens': 610, 'completion_tokens_details': {'accepted_prediction_tokens': None, 'audio_tokens': None, 'reasoning_tokens': 364, 'rejected_prediction_tokens': None}, 'prompt_tokens_details': {'audio_tokens': None, 'cached_tokens': 0}, 'prompt_cache_hit_tokens': 0, 'prompt_cache_miss_tokens': 153}, 'model_provider': 'openai', 'model_name': 'deepseek-v4-flash', 'system_fingerprint': 'fp_8b330d02d0_prod0820_fp8_kvcache_20260402', 'id': '6c64eed2-2efc-4c15-a4b0-7a71f91515e5', 'finish_reason': 'stop', 'logprobs': None} id='lc_run--019ef9f4-07f1-74d2-b2ce-a7fb9a9f71e6-0' tool_calls=[] invalid_tool_calls=[] usage_metadata={'input_tokens': 153, 'output_tokens': 457, 'total_tokens': 610, 'input_token_details': {'cache_read': 0}, 'output_token_details': {'reasoning': 364}}
+20260624 22:06:25 | MainProcess | MainThread | file_writer.write_to_pdf:93 | INFO: pdf写入完成
+20260624 22:07:45 | MainProcess | MainThread | project_config.initialize:30 | INFO: 命令行参数:Namespace(config='config.yaml', model_type='OpenAIModel', model_name='', api_key='', input_file='', source_language='', target_language='', output_format='', base_url='https://api.deepseek.com/v1')
+20260624 22:07:52 | MainProcess | MainThread | translator_chain.run:46 | ERROR: 'AIMessage' object is not subscriptable
+Traceback (most recent call last):
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\main.py", line 20, in <module>
+    translator.book_translation(pdf_file_path=config.input_file, source_language=config.source_language, target_language=config.target_language, out_file_format=config.output_format)
+    │          │                              │                                  │                                       │                                       └ <utils.project_config.ProjectConfig object at 0x000002BA45963CB0>
+    │          │                              │                                  │                                       └ <utils.project_config.ProjectConfig object at 0x000002BA45963CB0>
+    │          │                              │                                  └ <utils.project_config.ProjectConfig object at 0x000002BA45963CB0>
+    │          │                              └ <utils.project_config.ProjectConfig object at 0x000002BA45963CB0>
+    │          └ <function PDFTranslator.book_translation at 0x000002BA45937B00>
+    └ <translator.book_translation.PDFTranslator object at 0x000002BA45B90050>
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\translator\book_translation.py", line 43, in book_translation
+    translation_text, status = self.langchain.run(content, source_language, target_language)
+                               │    │         │   │        │                └ 'Chinese'
+                               │    │         │   │        └ 'English'
+                               │    │         │   └ <book.content.Content object at 0x000002BA463978C0>
+                               │    │         └ <function TranslatorChain.run at 0x000002BA45937920>
+                               │    └ <translator.translator_chain.TranslatorChain object at 0x000002BA45B902F0>
+                               └ <translator.book_translation.PDFTranslator object at 0x000002BA45B90050>
+
+> File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\translator\translator_chain.py", line 44, in run
+    log.info(f'翻译后的内容：{result['content']}')
+    │   │              └ AIMessage(content='测试数据  \n该数据集包含由OpenAI的AI语言模型ChatGPT提供的两个测试样本。  \n这些样本包括一个Markdown表格和一段英文文本，可用于测试支持文本和表格格式的英译中翻译软件。  \n\n**...
+    │   └ <function Logger.info at 0x000002BA45618D60>
+    └ <loguru.logger handlers=[(id=1, level=10, sink=<stdout>), (id=2, level=20, sink='C:\Users\Administrator\Desktop\PythonCode\La...
+
+TypeError: 'AIMessage' object is not subscriptable
+20260624 22:07:52 | MainProcess | MainThread | content.set_translation:35 | WARNING: 输入的translation不是字符串！
+20260624 22:07:57 | MainProcess | MainThread | translator_chain.run:46 | ERROR: 'AIMessage' object is not subscriptable
+Traceback (most recent call last):
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\main.py", line 20, in <module>
+    translator.book_translation(pdf_file_path=config.input_file, source_language=config.source_language, target_language=config.target_language, out_file_format=config.output_format)
+    │          │                              │                                  │                                       │                                       └ <utils.project_config.ProjectConfig object at 0x000002BA45963CB0>
+    │          │                              │                                  │                                       └ <utils.project_config.ProjectConfig object at 0x000002BA45963CB0>
+    │          │                              │                                  └ <utils.project_config.ProjectConfig object at 0x000002BA45963CB0>
+    │          │                              └ <utils.project_config.ProjectConfig object at 0x000002BA45963CB0>
+    │          └ <function PDFTranslator.book_translation at 0x000002BA45937B00>
+    └ <translator.book_translation.PDFTranslator object at 0x000002BA45B90050>
+
+  File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\translator\book_translation.py", line 43, in book_translation
+    translation_text, status = self.langchain.run(content, source_language, target_language)
+    │                          │    │         │   │        │                └ 'Chinese'
+    │                          │    │         │   │        └ 'English'
+    │                          │    │         │   └ <book.content.TablesContent object at 0x000002BA46397A10>
+    │                          │    │         └ <function TranslatorChain.run at 0x000002BA45937920>
+    │                          │    └ <translator.translator_chain.TranslatorChain object at 0x000002BA45B902F0>
+    │                          └ <translator.book_translation.PDFTranslator object at 0x000002BA45B90050>
+    └ AIMessage(content='测试数据  \n该数据集包含由OpenAI的AI语言模型ChatGPT提供的两个测试样本。  \n这些样本包括一个Markdown表格和一段英文文本，可用于测试支持文本和表格格式的英译中翻译软件。  \n\n**...
+
+> File "C:\Users\Administrator\Desktop\PythonCode\LangChain\langchain的书籍翻译项目\translator\translator_chain.py", line 44, in run
+    log.info(f'翻译后的内容：{result['content']}')
+    │   │              └ AIMessage(content='水果, 颜色, 价格（美元）\n苹果, 红色, 1.20\n香蕉, 黄色, 0.50\n橙子, 橙色, 0.80\n草莓, 红色, 2.50\n蓝莓, 蓝色, 3.00\n猕猴桃, 绿色, 1.00\n芒果, 橙...
+    │   └ <function Logger.info at 0x000002BA45618D60>
+    └ <loguru.logger handlers=[(id=1, level=10, sink=<stdout>), (id=2, level=20, sink='C:\Users\Administrator\Desktop\PythonCode\La...
+
+TypeError: 'AIMessage' object is not subscriptable
+20260624 22:07:57 | MainProcess | MainThread | file_writer.write_to_pdf:93 | INFO: pdf写入完成
+20260624 22:08:16 | MainProcess | MainThread | project_config.initialize:30 | INFO: 命令行参数:Namespace(config='config.yaml', model_type='OpenAIModel', model_name='', api_key='', input_file='', source_language='', target_language='', output_format='', base_url='https://api.deepseek.com/v1')
+20260624 22:08:20 | MainProcess | MainThread | translator_chain.run:44 | INFO: 翻译后的内容：测试数据  
+本数据集包含由OpenAI的AI语言模型ChatGPT提供的两个测试样本。  
+这些样本包括一个Markdown表格和一段英文文本，可用于测试支持文本和表格格式的英译中翻译软件。  
+
+文本测试  
+敏捷的棕色狐狸跳过懒狗。这个全字母句至少包含英语字母表中的每个字母一次。全字母句常用于测试字体、键盘及其他文本相关工具。除了英语外，许多其他语言也有全字母句。由于语言的独特性，某些全字母句的构造更为困难。  
+
+表格测试
+20260624 22:08:36 | MainProcess | MainThread | translator_chain.run:44 | INFO: 翻译后的内容：水果, 颜色, 价格 (美元)
+苹果, 红色, 1.20
+香蕉, 黄色, 0.50
+橙子, 橙色, 0.80
+草莓, 红色, 2.50
+蓝莓, 蓝色, 3.00
+猕猴桃, 绿色, 1.00
+芒果, 橙色, 1.50
+葡萄, 紫色, 2.00
+20260624 22:08:36 | MainProcess | MainThread | file_writer.write_to_pdf:93 | INFO: pdf写入完成

@@ -1,6 +1,7 @@
-from argparse import ArgumentParser
+﻿from yaml import safe_load
 
-from yaml import safe_load
+from utils.argumentUtils import ArgumentUtils
+from utils.log_utils import log
 
 
 class ProjectConfig:
@@ -24,26 +25,27 @@ class ProjectConfig:
 
         # 命令行参数 配置的初始化
         if self._args is None:
-            arg_utils = ArgumentParser()
-            self._args = arg_utils.parse_args()
+            arg_utils = ArgumentUtils()
+            self._args = arg_utils.parser_args()
+            log.info(f'命令行参数:{self._args}')
 
         # YAML文件 配置的初始化： 如果YAML中的配置和命令行参数冲突，以命令行参数为准
         if self._config is None:
             with open(self._args.config, 'r') as f:
                 config = safe_load(f)
 
-            overridden_config = {  # 所有冲突的配置，都取命令行参数
-                key: value for key, value in vars(self._args).items() if key in config and value is not None
+            # 用非空的命令行参数覆盖 YAML 配置
+            overridden_config = {
+                key: value for key, value in vars(self._args).items()
+                if value is not None and value != ""
             }
 
-            config.update(overridden_config)  # 把命令的参数覆盖config文件
+            config.update(overridden_config)
             self._config = config
 
     def __getattr__(self, item):
-        # 当访问当前对象实例的属性时 自动调用该魔法方法
-        # 外部可以直接访问config文件里面的参数
         if self._config and item in self._config:
-            return self._cofnig[item]
+            return self._config[item]
         else:
             raise AttributeError(f"'{item}' object has no attribute '{item}'")
 
