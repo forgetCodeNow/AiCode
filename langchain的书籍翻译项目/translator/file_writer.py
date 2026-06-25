@@ -23,14 +23,14 @@ class FileWriter:
         '''
 
         if out_file_format.lower() == 'pdf':
-            self.write_to_pdf(out_file_path)
+            return self.write_to_pdf(out_file_path)
         elif out_file_format.lower() == 'markdown':
-            self.write_to_markdown(out_file_path)
+            return self.write_to_markdown(out_file_path)
         elif out_file_format.lower() == 'word':
-            self.write_to_word(out_file_path)
+            return self.write_to_word(out_file_path)
         else:
             log.warning('当前仅有pdf markdown word 三种输出模式')
-            return
+            return ''
 
     def write_to_pdf(self, out_file_path: str = None):
         # 判断是否传入输出文件路径，没有就使用默认路径
@@ -91,6 +91,7 @@ class FileWriter:
 
         doc.build(pdf_data)
         log.info('pdf写入完成')
+        return out_file_path
 
     def write_to_markdown(self, out_file_path: str = None):
         # 判断是否传入输出文件路径，没有就使用默认路径

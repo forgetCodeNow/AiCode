@@ -1306,3 +1306,9 @@ TypeError: 'AIMessage' object is not subscriptable
 芒果, 橙色, 1.50
 葡萄, 紫色, 2.00
 20260624 22:08:36 | MainProcess | MainThread | file_writer.write_to_pdf:93 | INFO: pdf写入完成
+20260625 22:27:15 | MainProcess | MainThread | project_config.initialize:30 | INFO: 命令行参数:Namespace(config='config.yaml', model_type='OpenAIModel', model_name='', api_key='', input_file='', source_language='', target_language='', output_format='', base_url='https://api.deepseek.com/v1')
+20260625 22:27:35 | MainProcess | MainThread | project_config.initialize:30 | INFO: 命令行参数:Namespace(config='config.yaml', model_type='OpenAIModel', model_name='', api_key='', input_file='', source_language='', target_language='', output_format='', base_url='https://api.deepseek.com/v1')
+20260625 22:28:18 | MainProcess | MainThread | project_config.initialize:30 | INFO: 命令行参数:Namespace(config='config.yaml', model_type='OpenAIModel', model_name='', api_key='', input_file='', source_language='', target_language='', output_format='', base_url='https://api.deepseek.com/v1')
+20260625 22:28:55 | MainProcess | AnyIO worker thread | file_writer.write_to_pdf:93 | INFO: pdf写入完成
+20260625 23:31:00 | MainProcess | AnyIO worker thread | project_config.initialize:30 | INFO: 命令行参数:Namespace(config='config.yaml', model_type='OpenAIModel', model_name='', api_key='', input_file='', source_language='', target_language='', output_format='', base_url='https://api.deepseek.com/v1')
+20260625 23:31:15 | MainProcess | AnyIO worker thread | file_writer.write_to_pdf:93 | INFO: pdf写入完成

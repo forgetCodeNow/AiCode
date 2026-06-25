@@ -47,7 +47,7 @@ class PDFTranslator:
                 self.book.pages[page_index].contents[content_index].set_translation(translation_text, status)
 
         # 调用写入模块将翻译后的数据写入out_file_format指定文件
-        self.writer.write_to_file(out_file_path, out_file_format)
+        return self.writer.write_to_file(out_file_path, out_file_format)
 
 
 
