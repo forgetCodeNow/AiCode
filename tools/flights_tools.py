@@ -1,11 +1,11 @@
-from sqlite3 import connect, Cursor
+﻿from sqlite3 import connect, Cursor
 from datetime import date, datetime
 from typing import Optional, List, Dict
 import pytz
 from langchain_core.runnables import RunnableConfig
 from langchain_core.tools import tool
 
-db = "../travel2.sqlite"  # 数据库文件名
+db = "../travel_new.sqlite"  # 数据库文件名
 
 
 @tool

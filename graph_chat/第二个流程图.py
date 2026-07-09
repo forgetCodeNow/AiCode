@@ -1,14 +1,14 @@
-import uuid
+﻿import uuid
 
 from langchain_core.messages import ToolMessage
 from langgraph.checkpoint.memory import MemorySaver
-from langgraph.constants import START
+from langgraph.constants import START, END
 from langgraph.graph import StateGraph
 
 from tools.flights_tools import fetch_user_flight_information
 from tools.init_db import update_dates
 
-from graph_chat.assistant import create_assistant_node, part_1_tools
+from graph_chat.assistant import create_assistant_node, safe_tools, sensitive_tools, sensitive_tool_names
 from graph_chat.state import State
 from langgraph.prebuilt import tools_condition
 
@@ -34,27 +34,48 @@ def get_user_info(state: State):
 builder.add_node('fetch_user_info', get_user_info)
 builder.add_edge(START, 'fetch_user_info')
 
-# 添加一个名为‘tools’的节点，该节点创建了一个带有回退机制的工具节点
-builder.add_node('tools', create_tool_node_with_fallback(part_1_tools))
+# 分两个工具节点，safe_tools sensitive_tools
+builder.add_node('safe_tools', create_tool_node_with_fallback(safe_tools))
+builder.add_node('sensitive_tools', create_tool_node_with_fallback(sensitive_tools))
 
 # 定义边：这些边决定了控制流如何移动
 # 从起点START到‘assistant’节点添加一条边
 builder.add_edge('fetch_user_info', 'assistant')
 # 从assistant节点根据条件判断添加到其他节点的边
 # 使用tools_condition来决定哪些条件满足时应跳转到哪些节点
+def route_condition_tools(state: State):
+    """
+    根据当前状态，来决定下一个要执行的节点
+    :param state:当前状态
+    :return:下一个要执行的节点的名字
+    """
+    next_node = tools_condition(state)
+    if next_node == END:
+        return END
+
+    ai_message = state['messages'][-1]
+    tool_call = ai_message.tool_calls[0]
+    if tool_call['name'] in sensitive_tool_names:
+        # 条件成立肯定是敏感工具，需要加入中断用户确认
+        return 'sensitive_tools'
+    else:
+        return 'safe_tools'
+
 builder.add_conditional_edges(
     'assistant',
-    tools_condition,  # 条件路由函数，返回值是tools对应节点tools名字，可以自定义
+    route_condition_tools,  # 自定义条件路由函数，判断调用的工具是否是敏感工具，来决定路由到那个工具节点
+    path_map=['safe_tools', 'sensitive_tools', END]
 )
-# 从tools节点回到assistant节点添加一条边
-builder.add_edge('tools', 'assistant')
+
+builder.add_edge('safe_tools', 'assistant')
+builder.add_edge('sensitive_tools', 'assistant')
 
 # 检查点让状态图可以持久化其状态
 # 这是整个状态图的完整内存
 memory = MemorySaver()
 
 # 变异状态图，配置检查点为memory，配置中断点
-graph = builder.compile(checkpointer=memory, interrupt_before=['tools'])
+graph = builder.compile(checkpointer=memory, interrupt_before=['sensitive_tools'])
 
 session_id = uuid.uuid4()
 update_dates()  # 每次测试的时候：保证数据库时全新的，保证时间也是最近的时间
