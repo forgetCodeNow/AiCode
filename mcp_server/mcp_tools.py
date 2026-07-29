@@ -2,7 +2,7 @@ from langchain_community.utilities import SQLDatabase
 from mcp.server import FastMCP
 
 mcp_server = FastMCP(name='my_mcp', instructions='我的mcp服务器', port=8008)
-db = SQLDatabase.from_uri('sqlite:///../chinook.db')
+db = SQLDatabase.from_uri('sqlite:///C:/Users/Administrator/Desktop/PythonCode/Text2SQL/chinook.db')
 
 @mcp_server.tool(name='list_tables_tool', description='输入一个空字符串，返回数据库中所有以逗号分割的表名列表')
 def list_tables_tool(query: str) -> str:
